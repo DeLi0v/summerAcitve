@@ -18,20 +18,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['role'] = $user['role'];
         header('Location: index.php');
     } else {
-        echo "Неверный email или пароль.";
+        echo "<p class='error'>Неверный email или пароль.</p>";
     }
 }
 
 ?>
 <h1>Вход</h1>
-<form method="POST">
-    <label for="email">Электронная почта:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
 
-    <label for="password">Пароль:</label><br>
-    <input type="password" id="password" name="password" required><br><br>
+<div class="form-container">
+    <form method="POST">
+        <label for="email">Электронная почта:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
 
-    <input type="submit" value="Войти">
-</form>
+        <label for="password">Пароль:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Войти">
+    </form>
+</div>
 
 <?php include('templates/footer.php'); ?>

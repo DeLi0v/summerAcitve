@@ -22,6 +22,16 @@ if ($booking && $booking['status'] == 'В обработке') {
     $stmt->execute([$booking_id]);
     header('Location: dashboard.php');
 } else {
-    echo "Бронирование не найдено или не может быть отменено.";
+    $error_message = "Бронирование не найдено или не может быть отменено.";
 }
 ?>
+
+<?php include('templates/header.php'); ?>
+
+<h1>Отмена бронирования</h1>
+
+<?php if (isset($error_message)): ?>
+    <div class="error-message"><?php echo $error_message; ?></div>
+<?php endif; ?>
+
+<?php include('templates/footer.php'); ?>

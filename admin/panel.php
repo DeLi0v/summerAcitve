@@ -49,7 +49,7 @@ $equipments = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <td><?php echo $booking['total_price']; ?> руб.</td>
             <td>
                 <a href="edit_booking.php?id=<?php echo $booking['id']; ?>">Изменить</a> |
-                <a href="delete_booking.php?id=<?php echo $booking['id']; ?>">Удалить</a>
+                <a href="delete_booking.php?id=<?php echo $booking['id']; ?>" onclick="return confirm('Вы уверены, что хотите удалить это бронирование?')">Удалить</a>
             </td>
         </tr>
     <?php endforeach; ?>
@@ -72,7 +72,7 @@ $equipments = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <td><?php echo $user['role']; ?></td>
             <td>
                 <a href="edit_user.php?id=<?php echo $user['id']; ?>">Изменить</a> |
-                <a href="delete_user.php?id=<?php echo $user['id']; ?>">Удалить</a>
+                <a href="delete_user.php?id=<?php echo $user['id']; ?>" onclick="return confirm('Вы уверены, что хотите удалить этого пользователя?')">Удалить</a>
             </td>
         </tr>
     <?php endforeach; ?>
@@ -95,7 +95,7 @@ $equipments = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <td><?php echo $equipment['availability']; ?></td>
             <td>
                 <a href="edit_equipment.php?id=<?php echo $equipment['id']; ?>">Изменить</a> |
-                <a href="delete_equipment.php?id=<?php echo $equipment['id']; ?>">Удалить</a>
+                <a href="delete_equipment.php?id=<?php echo $equipment['id']; ?>" onclick="return confirm('Вы уверены, что хотите удалить это оборудование?')">Удалить</a>
             </td>
         </tr>
     <?php endforeach; ?>

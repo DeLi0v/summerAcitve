@@ -18,20 +18,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 ?>
 <h1>Регистрация</h1>
-<form method="POST">
-    <label for="name">Имя:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
 
-    <label for="email">Электронная почта:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+<div class="form-container">
+    <form method="POST">
+        <label for="name">Имя:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
 
-    <label for="phone">Телефон:</label><br>
-    <input type="text" id="phone" name="phone" required><br><br>
+        <label for="email">Электронная почта:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
 
-    <label for="password">Пароль:</label><br>
-    <input type="password" id="password" name="password" required><br><br>
+        <label for="phone">Телефон:</label><br>
+        <input type="text" id="phone" name="phone" required><br><br>
 
-    <input type="submit" value="Зарегистрироваться">
-</form>
+        <label for="password">Пароль:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+</div>
 
 <?php include('templates/footer.php'); ?>
