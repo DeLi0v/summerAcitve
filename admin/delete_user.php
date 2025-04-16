@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 
 // Проверка наличия ID
 if (!isset($_GET['id'])) {
-    header('Location: admin_users.php');
+    header('Location: users.php');
     exit;
 }
 
@@ -20,7 +20,7 @@ $user_id = $_GET['id'];
 if ($_SESSION['user_id'] == $user_id) {
     $_SESSION['message'] = 'Вы не можете удалить самого себя.';
     $_SESSION['message_type'] = 'error';
-    header('Location: admin_users.php');
+    header('Location: users.php');
     exit;
 }
 
@@ -30,6 +30,6 @@ $stmt->execute([$user_id]);
 
 $_SESSION['message'] = 'Пользователь успешно удалён.';
 $_SESSION['message_type'] = 'success';
-header('Location: admin_users.php');
+header('Location: users.php');
 exit;
 ?>
