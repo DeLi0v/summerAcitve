@@ -18,9 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['role'] = $user['role'];
 
         if ($user['role'] == 'admin') {
-            header('Location: panel.php');
+            header('Location: ' . $_SERVER['DOCUMENT_ROOT'] .  'admin/panel.php');
         } else {
-            header('Location: ' . $_SERVER['DOCUMENT_ROOT'] .  'dashboard.php');
+            header('Location: ' . $_SERVER['DOCUMENT_ROOT'] .  '/account/account.php');
         }
         exit;
     } else {
