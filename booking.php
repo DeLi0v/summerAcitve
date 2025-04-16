@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute([$user_id, $equipment_id, $start_date, $end_date, $total_price]);
 
             $_SESSION['success'] = "Бронирование успешно создано!";
-            header('Location: /account.php');
+            header('Location: /account/account.php');
             exit;
         }
     }
