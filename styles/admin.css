@@ -1,57 +1,66 @@
-/* Админка */
+/* === Админка: панель === */
 .admin-panel {
-    padding: 20px;
-    max-width: 1000px;
-    margin: auto;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .admin-panel h1 {
     text-align: center;
     color: #0077cc;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    font-size: 2rem;
 }
 
+/* Секция карточек */
 .admin-sections {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
 }
 
+/* Ссылка оборачивает всю карточку */
+.admin-sections a {
+    flex: 1 1 calc(25% - 20px); /* до 4 в ряд */
+    text-decoration: none;
+    color: inherit;
+    min-width: 250px;
+}
+
+/* Карточка */
 .admin-section {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    width: 30%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* чтобы все карточки были одного размера */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+/* Hover-эффект на карточку */
+.admin-sections a:hover .admin-section {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+
+/* Заголовок внутри карточки */
 .admin-section h2 {
     margin-bottom: 15px;
+    font-size: 1.25rem;
+    color: #333;
 }
 
-.admin-section a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #0077cc;
-    font-weight: bold;
-}
-
-.admin-section a:hover {
-    color: #005fa3;
-}
-
-/* Админка общее таблица */
+/* === Общие стили таблиц и форм === */
 main {
     padding: 20px;
     max-width: 1000px;
     margin: 0 auto;
-}
-
-h1 {
-    text-align: center;
-    color: #0077cc;
-    margin-bottom: 20px;
 }
 
 table {
@@ -80,12 +89,12 @@ td a:hover {
     text-decoration: underline;
 }
 
-/* Форма */
+/* Формы */
 .admin-form {
     max-width: 500px;
-    margin: 0 auto;
+    margin: 20px auto;
     background: #fff;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
     display: flex;
@@ -94,18 +103,29 @@ td a:hover {
 }
 
 .admin-form label {
-    font-weight: bold;
+    font-weight: 600;
+    color: #555;
 }
 
 .admin-form input,
-.admin-form select {
+.admin-form select,
+.admin-form textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 1rem;
+    transition: border-color 0.2s ease;
 }
 
-.admin-form button {
+.admin-form input:focus,
+.admin-form select:focus,
+.admin-form textarea:focus {
+    border-color: #0077cc;
+    outline: none;
+}
+
+.admin-form button,
+.admin-form input[type="submit"] {
     background-color: #0077cc;
     color: white;
     border: none;
@@ -116,15 +136,17 @@ td a:hover {
     transition: background 0.3s;
 }
 
-.admin-form button:hover {
+.admin-form button:hover,
+.admin-form input[type="submit"]:hover {
     background-color: #005fa3;
 }
 
+/* Сообщения */
 .message {
     margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
 }
 
 .message.success {
@@ -137,4 +159,21 @@ td a:hover {
     background-color: #f44336;
     color: white;
     border: 1px solid #e53935;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .admin-sections a {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+    .admin-sections a {
+        flex: 1 1 100%;
+    }
 }
