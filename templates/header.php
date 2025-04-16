@@ -16,7 +16,7 @@
             <ul>
                 <li><a href="index.php">Каталог</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
-                    <li><a href="#">Личный кабинет</a></li>
+                    <li><a href="#" class="test">Личный кабинет</a></li>
                     <li><a href="#">Выход</a></li>
                 <?php else: ?>
                     <li><a href="#">Вход</a></li>
