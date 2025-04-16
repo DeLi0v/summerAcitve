@@ -39,6 +39,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
+    // Дополнительная проверка, чтобы администратор не мог изменить свою роль на "user"
+    if ($_SESSION['user_id'] == $user_id && $role == 'user') {
+        echo "Вы не можете изменить свою роль на пользователя.";
+        exit;
+    }
+
     // Обновление данных пользователя
     $stmt = $pdo->prepare("UPDATE users SET name = ?, email = ?, phone = ?, role = ? WHERE id = ?");
     $stmt->execute([$name, $email, $phone, $role, $user_id]);
