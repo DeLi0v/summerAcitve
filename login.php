@@ -5,10 +5,6 @@ include('assets/db.php');
 
 $error = '';
 
-// Включаем вывод ошибок, чтобы видеть, если что-то не так
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = trim($_POST['email']);
     $password = $_POST['password'];

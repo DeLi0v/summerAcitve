@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // После регистрации — вход и переход в личный кабинет
         $_SESSION['user_id'] = $pdo->lastInsertId();
         $_SESSION['role'] = 'client';
-        header('Location: dashboard.php');
+        header('Location: account/account.php');
         exit;
     }
 }
