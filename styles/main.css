@@ -51,8 +51,8 @@ nav ul li a:hover {
 /* Основной контент */
 main, h1, h2, h3, p {
     margin: 20px auto;
-    width: 90%;
-    max-width: 1000px;
+    /* width: 90%; */
+    /* max-width: 1000px; */
 }
 
 /* Стили для ссылок */
