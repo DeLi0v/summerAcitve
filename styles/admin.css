@@ -141,6 +141,18 @@ td a:hover {
     background-color: #005fa3;
 }
 
+.admin-form .cancel-button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.admin-form .cancel-button:hover {
+    background-color: #e0e0e0;
+}
+
 /* Сообщения */
 .message {
     margin: 10px 0;
