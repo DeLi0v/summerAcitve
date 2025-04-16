@@ -7,6 +7,8 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+echo '<link rel="stylesheet" href="/styles/edit_profile.css">';
+
 $user_id = $_SESSION['user_id'];
 
 // Получаем информацию о пользователе
