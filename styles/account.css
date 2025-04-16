@@ -7,12 +7,8 @@
     margin-top: 20px;
 }
 
-h2 {
-    font-size: 1.2rem;
-}
-
 .dashboard-info {
-    width: 30%; /* Делаем блок с информацией о пользователе узким */
+    /* width: 30%; Делаем блок с информацией о пользователе узким */
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
@@ -21,7 +17,7 @@ h2 {
 }
 
 .dashboard-content {
-    width: 65%; /* Блок с бронированиями занимает больше места */
+    width: 100%; /* Блок с бронированиями занимает больше места */
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
