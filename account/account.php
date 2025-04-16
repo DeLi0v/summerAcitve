@@ -22,7 +22,7 @@ $stmt->execute([$user_id]);
 $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<?php include('../templates/header.php'); ?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'); ?>
 
 <main>
     <h1>Личный кабинет</h1>
@@ -69,4 +69,4 @@ $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php endif; ?>
 </main>
 
-<?php include('templates/footer.php'); ?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'); ?>
