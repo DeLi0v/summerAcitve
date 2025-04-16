@@ -15,7 +15,6 @@ if (!isset($_GET['equipment_id'])) {
 }
 
 echo '<link rel="stylesheet" href="/styles/booking.css">';
-echo '<link rel="stylesheet" href="/styles/equipment_catalog.css">';
 
 $equipment_id = $_GET['equipment_id'];
 
@@ -79,7 +78,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include('templates/header.php');
 ?>
 
-<main>
+<main class="container">
+
     <h1>Бронирование: <?php echo htmlspecialchars($equipment['name']); ?></h1>
 
     <div class="equipment-details-card">
