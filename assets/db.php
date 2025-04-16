@@ -1,12 +1,13 @@
 <?php
-var $host = "192.168.0.2";
-var $dbname = "rental_db";
-var $username = "webuser";
-var $password = "1";
+$host = "192.168.0.2";
+$dbname = "rental_db";
+$username = "webuser";
+$password = "1";
 
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Ошибка подключения к базе данных: " . $e->getMessage());
+$conn = mysqli_connect($hostname, $username, $password, $database);
+
+// Проверяем, удалось ли подключиться к базе данных
+if (!$conn) {
+    die("Подключение не удалось: " . mysqli_connect_error());
 }
+?>
