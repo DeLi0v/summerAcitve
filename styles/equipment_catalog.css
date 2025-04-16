@@ -51,6 +51,12 @@ h1 {
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+    display: -moz-box;
+    -moz-line-clamp: 4;
+    -moz-box-orient: vertical;
+    display: box;
+    line-clamp: 4;
+    box-orient: vertical;
 }
 
 .equipment-card .btn {
