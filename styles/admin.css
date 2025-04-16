@@ -142,7 +142,7 @@ td a:hover {
   background-color: #005fa3;
 }
 
-.admin-form cancel-button {
+.admin-form .cancel-button {
   text-decoration: none;
   background-color: #f0f0f0;
   color: #333;
@@ -156,7 +156,7 @@ td a:hover {
   text-align: center;
 }
 
-.admin-form cancel-button:hover {
+.admin-form .cancel-button:hover {
   background-color: #e0e0e0;
 }
 
