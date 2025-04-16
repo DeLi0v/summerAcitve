@@ -20,6 +20,7 @@ $user_id = $_GET['id'];
 if ($_SESSION['user_id'] == $user_id) {
     $_SESSION['message'] = 'Вы не можете удалить самого себя.';
     $_SESSION['message_type'] = 'error';
+    header('Location: admin_users.php');
     exit;
 }
 
