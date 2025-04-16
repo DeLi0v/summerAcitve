@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo isset($page_title) ? $page_title : 'Аренда оборудования'; ?></title>
-    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
     <header>

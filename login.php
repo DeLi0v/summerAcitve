@@ -3,7 +3,7 @@
 session_start();
 include('assets/db.php');
 
-echo '<link rel="stylesheet" href="assets/login.css">';
+echo '<link rel="stylesheet" href="/styles/login.css">';
 
 $error = '';
 

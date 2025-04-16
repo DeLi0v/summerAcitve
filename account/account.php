@@ -7,6 +7,8 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+echo '<link rel="stylesheet" href="/styles/account.css">';
+
 $user_id = $_SESSION['user_id'];
 
 // Получаем информацию о пользователе
