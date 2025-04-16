@@ -21,9 +21,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
-
-    $stmt = $pdo->prepare("UPDATE users SET name = ?, email = ?, phone = ? WHERE id = ?");
-    $stmt->execute([$name, $email, $phone, $user_id]);
+    $password = $_POST['password'];
+    
+    $stmt = $pdo->prepare("UPDATE users SET name = ?, email = ?, phone = ?, password = ? WHERE id = ?");
+    $stmt->execute([$name, $email, $phone, $password, $user_id]);
 
     $_SESSION['success'] = "Профиль успешно обновлён!";
     header('Location: /account/account.php');
@@ -47,6 +48,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <label for="phone">Телефон</label>
             <input type="text" id="phone" name="phone" value="<?php echo htmlspecialchars($user['phone']); ?>" required>
+
+            <label for="password">Новый пароль:</label>
+            <input type="password" name="password" id="password">
 
             <input type="submit" value="Сохранить изменения">
         </form>
