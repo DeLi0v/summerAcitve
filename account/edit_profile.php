@@ -35,19 +35,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <main>
     <h1>Редактирование профиля</h1>
-    
-    <form method="POST">
-        <label for="name">Имя</label>
-        <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
-        
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
-        
-        <label for="phone">Телефон</label>
-        <input type="text" id="phone" name="phone" value="<?php echo htmlspecialchars($user['phone']); ?>" required>
-        
-        <input type="submit" value="Сохранить изменения">
-    </form>
+
+    <div class="form-container">
+        <form method="POST">
+            <label for="name">Имя</label>
+            <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>"
+                required>
+
+            <label for="phone">Телефон</label>
+            <input type="text" id="phone" name="phone" value="<?php echo htmlspecialchars($user['phone']); ?>" required>
+
+            <input type="submit" value="Сохранить изменения">
+        </form>
+    </div>
 </main>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'); ?>

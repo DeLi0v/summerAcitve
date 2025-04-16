@@ -27,6 +27,7 @@ $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'); ?>
 
 <main>
+
     <h1>Личный кабинет</h1>
 
     <div class="dashboard-container">
