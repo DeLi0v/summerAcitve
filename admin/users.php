@@ -13,12 +13,23 @@ echo '<link rel="stylesheet" href="/styles/admin.css">';
 // Получаем всех пользователей
 $stmt = $pdo->query("SELECT * FROM users ORDER BY id DESC");
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Извлекаем сообщение из сессии
+$message = $_SESSION['message'] ?? null;
+$message_type = $_SESSION['message_type'] ?? 'success';
+unset($_SESSION['message'], $_SESSION['message_type']);
 ?>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'); ?>
 
 <main>
     <h1>Пользователи</h1>
+
+    <?php if ($message): ?>
+        <div class="message <?= htmlspecialchars($message_type) ?>">
+            <?= htmlspecialchars($message) ?>
+        </div>
+    <?php endif; ?>
 
     <div class="main-table-wrapper">
         <table>

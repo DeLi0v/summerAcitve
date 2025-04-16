@@ -18,7 +18,8 @@ $user_id = $_GET['id'];
 
 // Не даём администратору удалить самого себя
 if ($_SESSION['user_id'] == $user_id) {
-    echo "Вы не можете удалить самого себя.";
+    $_SESSION['message'] = 'Вы не можете удалить самого себя.';
+    $_SESSION['message_type'] = 'error';
     exit;
 }
 
@@ -26,6 +27,8 @@ if ($_SESSION['user_id'] == $user_id) {
 $stmt = $pdo->prepare("DELETE FROM users WHERE id = ?");
 $stmt->execute([$user_id]);
 
+$_SESSION['message'] = 'Пользователь успешно удалён.';
+$_SESSION['message_type'] = 'success';
 header('Location: admin_users.php');
 exit;
 ?>
