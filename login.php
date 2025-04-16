@@ -2,7 +2,7 @@
 // login.php
 session_start();
 include('includes/db.php');
-
+var_dump($pdo);
 $error = '';
 
 // Включаем вывод ошибок, чтобы видеть, если что-то не так
