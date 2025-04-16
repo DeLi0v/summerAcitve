@@ -2,7 +2,7 @@
 // Скрипт завершает бронирования, у которых дата окончания меньше текущей даты
 
 // Подключаем базу данных
-require_once($_SERVER['DOCUMENT_ROOT'] . '/assets/db.php');
+require_once('/assets/db.php');
 
 try {
     $stmt = $pdo->prepare("UPDATE bookings 
