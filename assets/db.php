@@ -4,7 +4,7 @@ $dbname = "rental_db";
 $username = "webuser";
 $password = "1";
 
-$conn = mysqli_connect($hostname, $username, $password, $database);
+$conn = mysqli_connect($host, $username, $password, $dbname);
 
 // Проверяем, удалось ли подключиться к базе данных
 if (!$conn) {
