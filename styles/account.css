@@ -16,6 +16,10 @@
     font-size: 0.95rem;
 }
 
+.dashboard-info h2 {
+    white-space: nowrap;
+}
+
 .dashboard-content {
     width: 100%; /* Блок с бронированиями занимает больше места */
     background-color: #ffffff;
