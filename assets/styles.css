@@ -1,5 +1,4 @@
-/* assets/styles.css */
-
+/* Общие стили */
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +13,7 @@ body {
     padding-bottom: 60px;
 }
 
+/* Header */
 header {
     background-color: #0077cc;
     color: white;
@@ -48,67 +48,73 @@ nav ul li a:hover {
     color: #ffd700;
 }
 
+/* Основной контент */
 main, h1, h2, h3, p {
     margin: 20px auto;
     width: 90%;
     max-width: 1000px;
 }
 
+/* Форма логина и регистрации */
 form {
     background-color: white;
     padding: 20px;
     margin-top: 15px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+/* Метки и поля формы */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"],
-input[type="date"],
-select,
-textarea {
+input[type="date"] {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-top: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    font-size: 1rem;
 }
 
+/* Кнопка отправки */
 input[type="submit"] {
     background-color: #0077cc;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
 }
 
 input[type="submit"]:hover {
     background-color: #005fa3;
 }
 
-table {
-    width: 90%;
-    max-width: 1000px;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+/* Ошибки */
+.error {
+    background-color: #ffdddd;
+    border-left: 5px solid #f44336;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: #a94442;
 }
 
-th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
+/* Дополнительные стили */
 footer {
     position: fixed;
     bottom: 0;
@@ -117,4 +123,29 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
+}
+
+/* Стиль для ссылок */
+a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #005fa3;
+}
+
+/* Стили для страницы "Регистрация" */
+.form-link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-link a {
+    color: #0077cc;
+}
+
+.form-link a:hover {
+    color: #005fa3;
 }
