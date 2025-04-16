@@ -20,6 +20,13 @@
     white-space: nowrap;
 }
 
+.dashboard-info a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
 .dashboard-content {
     width: 100%; /* Блок с бронированиями занимает больше места */
     background-color: #ffffff;
