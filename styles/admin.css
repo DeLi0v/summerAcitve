@@ -220,3 +220,6 @@ td a:hover {
     }
   }
   
+  .text-center {
+    text-align: center;
+  }

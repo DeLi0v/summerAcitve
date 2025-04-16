@@ -64,7 +64,7 @@ if (!$user) {
 <link rel="stylesheet" href="/styles/admin.css">
 
 <main>
-    <h1>Редактировать пользователя</h1>
+    <h1 class="text-center">Редактировать пользователя</h1>
 
     <?php if (isset($message)): ?>
         <div class="message <?php echo $message_type; ?>">

@@ -75,7 +75,7 @@ echo '<link rel="stylesheet" href="/styles/admin.css">';
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'); ?>
 
 <main>
-    <h1>Редактировать оборудование</h1>
+    <h1 class="text-center">Редактировать оборудование</h1>
 
     <?php if (!empty($errors)): ?>
         <div class="error">

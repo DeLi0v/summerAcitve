@@ -49,7 +49,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
 ?>
 
 <main>
-    <h1>Редактировать бронирование</h1>
+    <h1 class="text-center">Редактировать бронирование</h1>
 
     <form method="POST">
         <label for="start_date">Дата начала</label>

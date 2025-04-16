@@ -27,7 +27,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
 ?>
 
 <main>
-    <h1>Добавить категорию</h1>
+    <h1 class="text-center">Добавить категорию</h1>
 
     <form method="POST">
         <label for="name">Название категории</label>

@@ -44,7 +44,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
 ?>
 
 <main>
-    <h1>Редактировать категорию</h1>
+    <h1 class="text-center">Редактировать категорию</h1>
 
     <form method="POST">
         <label for="name">Название категории</label>
