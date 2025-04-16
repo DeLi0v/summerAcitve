@@ -49,21 +49,29 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
 ?>
 
 <main>
-    <h1 class="text-center">Редактировать бронирование</h1>
-
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php'); ?>
+    <div class="admin-header">
+        <?php
+        $back_url = '/admin/bookings.php';
+        include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php');
+        ?>
+        <h1 class="text-center">Редактировать бронирование</h1>
+    </div>
 
     <form method="POST">
         <label for="start_date">Дата начала</label>
-        <input type="date" id="start_date" name="start_date" value="<?php echo htmlspecialchars($booking['start_date']); ?>" required>
+        <input type="date" id="start_date" name="start_date"
+            value="<?php echo htmlspecialchars($booking['start_date']); ?>" required>
 
         <label for="end_date">Дата окончания</label>
-        <input type="date" id="end_date" name="end_date" value="<?php echo htmlspecialchars($booking['end_date']); ?>" required>
+        <input type="date" id="end_date" name="end_date" value="<?php echo htmlspecialchars($booking['end_date']); ?>"
+            required>
 
         <label for="status">Статус</label>
         <select id="status" name="status" required>
-            <option value="В обработке" <?php echo $booking['status'] == 'В обработке' ? 'selected' : ''; ?>>В обработке</option>
-            <option value="Подтверждено" <?php echo $booking['status'] == 'Подтверждено' ? 'selected' : ''; ?>>Подтверждено</option>
+            <option value="В обработке" <?php echo $booking['status'] == 'В обработке' ? 'selected' : ''; ?>>В обработке
+            </option>
+            <option value="Подтверждено" <?php echo $booking['status'] == 'Подтверждено' ? 'selected' : ''; ?>>
+                Подтверждено</option>
             <option value="Отменено" <?php echo $booking['status'] == 'Отменено' ? 'selected' : ''; ?>>Отменено</option>
         </select>
 

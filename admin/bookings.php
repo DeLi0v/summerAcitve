@@ -53,7 +53,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
                         <td><?php echo htmlspecialchars($booking['status']); ?></td>
                         <td><?php echo htmlspecialchars($booking['total_price']); ?> руб.</td>
                         <td>
-                            <a href="view_booking.php?id=<?php echo $booking['id']; ?>">Просмотреть</a>
+                            <a href="view_booking.php?id=<?php echo $booking['id']; ?>">Просмотреть</a> |
                             <?php if ($booking['status'] == 'В обработке'): ?>
                                 <a href="cancel_booking.php?id=<?php echo $booking['id']; ?>"
                                     onclick="return confirm('Вы уверены?')">Отменить</a>
