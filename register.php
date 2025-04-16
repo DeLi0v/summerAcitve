@@ -56,16 +56,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <form method="POST">
     <label for="name">Имя:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+    <input type="text" id="name" name="name" required>
 
     <label for="email">Электронная почта:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <input type="email" id="email" name="email" required>
 
     <label for="phone">Телефон:</label><br>
-    <input type="text" id="phone" name="phone" required><br><br>
+    <input type="text" id="phone" name="phone" required>
 
     <label for="password">Пароль:</label><br>
-    <input type="password" id="password" name="password" required><br><br>
+    <input type="password" id="password" name="password" required>
 
     <input type="submit" value="Зарегистрироваться">
 </form>

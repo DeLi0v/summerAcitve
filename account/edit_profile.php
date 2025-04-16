@@ -49,8 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
 
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>"
-                required>
+            <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
 
             <label for="phone">Телефон</label>
             <input type="text" id="phone" name="phone" value="<?php echo htmlspecialchars($user['phone']); ?>" required>
