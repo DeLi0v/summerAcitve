@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../assets/db.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/assets/db.php');
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: /login.php');

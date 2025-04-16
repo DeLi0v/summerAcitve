@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('includes/db.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/assets/db.php');
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<?php include('templates/header.php'); ?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'); ?>
 
 <main>
     <h1>Редактирование профиля</h1>
@@ -48,4 +48,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form>
 </main>
 
-<?php include('templates/footer.php'); ?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'); ?>
