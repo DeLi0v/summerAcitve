@@ -59,7 +59,6 @@
 /* === Общие стили таблиц и форм === */
 main {
   padding: 20px;
-  /* max-width: 1000px; */
   margin: 0 auto;
 }
 
@@ -147,7 +146,6 @@ td a:hover {
   background-color: #f0f0f0;
   color: #333;
   border: 1px solid #ccc;
-  border: none;
   padding: 12px;
   border-radius: 6px;
   cursor: pointer;
@@ -199,18 +197,17 @@ td a:hover {
 
 /* === Таблицы во всю ширину страницы === */
 .main-table-wrapper {
-  margin: 20px 0; /* отступы сверху/снизу */
-  overflow-x: auto; /* горизонтальный скролл при необходимости */
+  margin: 20px 0;
+  overflow-x: auto;
 }
 
 .main-table-wrapper table {
-  width: 100%; /* 100% от контейнера .main-table-wrapper */
-  min-width: 800px; /* не будет слишком уж сжиматься */
+  width: 100%;
+  min-width: 800px;
   border-collapse: collapse;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Заголовки и ячейки */
 .main-table-wrapper th,
 .main-table-wrapper td {
   padding: 12px;
@@ -223,7 +220,6 @@ td a:hover {
   font-weight: 600;
 }
 
-/* Ссылки внутри таблицы */
 .main-table-wrapper td a {
   color: #0077cc;
   text-decoration: none;
@@ -245,17 +241,9 @@ td a:hover {
 
 .admin-header {
   display: flex;
-  justify-content: center; /* центрируем заголовок */
+  justify-content: center;
   align-items: center;
-  position: relative; /* нужно для абсолютного позиционирования кнопки */
-  margin-bottom: 1.5rem;
-}
-
-.admin-header {
-  display: flex;
-  justify-content: center; /* центрируем заголовок */
-  align-items: center;
-  position: relative; /* нужно для абсолютного позиционирования кнопки */
+  position: relative;
   margin-bottom: 1.5rem;
 }
 
