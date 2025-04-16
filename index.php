@@ -2,6 +2,7 @@
 // index.php
 session_start();
 include('assets/db.php');
+
 $page_title = 'Каталог оборудования';
 include('templates/header.php');
 

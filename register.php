@@ -1,6 +1,7 @@
 <?php
 session_start();
-include('includes/db.php');
+include('assets/db.php');
+
 $page_title = 'Регистрация';
 include('templates/header.php');
 

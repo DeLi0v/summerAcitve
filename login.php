@@ -1,9 +1,8 @@
 <?php
 // login.php
 session_start();
-include('includes/db.php');
-var_dump($pdo);
-die();
+include('assets/db.php');
+
 $error = '';
 
 // Включаем вывод ошибок, чтобы видеть, если что-то не так
