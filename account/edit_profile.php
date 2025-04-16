@@ -22,9 +22,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $password = $_POST['password'];
-    
-    $stmt = $pdo->prepare("UPDATE users SET name = ?, email = ?, phone = ?, password = ? WHERE id = ?");
-    $stmt->execute([$name, $email, $phone, $password, $user_id]);
+
+    if (!empty($password)) {
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        $stmt = $pdo->prepare("UPDATE users SET name = ?, email = ?, phone = ?, password_hash = ? WHERE id = ?");
+        $stmt->execute([$name, $email, $phone, $password, $user_id]);
+    } else {
+        $stmt = $pdo->prepare("UPDATE users SET name = ?, email = ?, phone = ? WHERE id = ?");
+        $stmt->execute([$name, $email, $phone, $user_id]);
+    }
 
     $_SESSION['success'] = "Профиль успешно обновлён!";
     header('Location: /account/account.php');
