@@ -1,4 +1,3 @@
-<?php
 $host = "192.168.0.2";
 $dbname = "rental_db";
 $username = "webuser";
@@ -12,4 +11,3 @@ try {
 } catch (PDOException $e) {
     die("Ошибка подключения к базе данных: " . $e->getMessage());
 }
-?>
