@@ -22,7 +22,8 @@ $stmt->execute([$user_id]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$user) {
-    echo "Пользователь не найден.";
+    $message = "Пользователь не найден.";
+    $message_type = "error";  // Тип сообщения: ошибка
     exit;
 }
 
@@ -35,13 +36,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Проверка роли
     if ($role !== 'user' && $role !== 'admin') {
-        echo "Некорректное значение роли.";
+        $message = "Некорректное значение роли.";
+        $message_type = "error";  // Тип сообщения: ошибка
         exit;
     }
 
     // Дополнительная проверка, чтобы администратор не мог изменить свою роль на "user"
     if ($_SESSION['user_id'] == $user_id && $role == 'user') {
-        echo "Вы не можете изменить свою роль на пользователя.";
+        $message = "Вы не можете изменить свою роль на пользователя.";
+        $message_type = "error";  // Тип сообщения: ошибка
         exit;
     }
 
@@ -49,8 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare("UPDATE users SET name = ?, email = ?, phone = ?, role = ? WHERE id = ?");
     $stmt->execute([$name, $email, $phone, $role, $user_id]);
 
-    header('Location: admin_users.php');
-    exit;
+    $message = "Данные пользователя успешно обновлены.";
+    $message_type = "success";  // Тип сообщения: успех
 }
 ?>
 
@@ -59,6 +62,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <main>
     <h1>Редактировать пользователя</h1>
+
+    <?php if (isset($message)): ?>
+        <div class="message <?php echo $message_type; ?>">
+            <?php echo htmlspecialchars($message); ?>
+        </div>
+    <?php endif; ?>
 
     <form method="POST" class="admin-form">
         <label>Имя</label>
