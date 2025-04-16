@@ -55,13 +55,13 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
                         <td>
                             <a href="view_booking.php?id=<?php echo $booking['id']; ?>">Просмотреть</a>
                             <?php if ($booking['status'] == 'В обработке'): ?>
-                                |<a href="cancel_booking.php?id=<?php echo $booking['id']; ?>"
+                                | <a href="cancel_booking.php?id=<?php echo $booking['id']; ?>"
                                     onclick="return confirm('Вы уверены?')">Отменить</a>
                             <?php endif; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
-            </tbody>
+            </tbody>    
         </table>
     </div>
 </main>
