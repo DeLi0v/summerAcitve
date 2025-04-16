@@ -27,7 +27,6 @@ $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'); ?>
 
 <main>
-
     <h1>Личный кабинет</h1>
 
     <div class="dashboard-container">
@@ -38,6 +37,11 @@ $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <p><strong>Телефон:</strong> <?php echo htmlspecialchars($user['phone']); ?></p>
 
             <a href="/account/edit_profile.php">Изменить профиль</a>
+
+            <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin']): ?>
+                <!-- Кнопка видна только администраторам -->
+                <a href="/admin/panel.php" class="admin-button">Войти в административную панель</a>
+            <?php endif; ?>
         </div>
 
         <div class="dashboard-content">

@@ -20,10 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['role'] = $user['role'];
 
         if ($user['role'] == 'admin') {
-            header('Location: admin/panel.php');
+            $_SESSION['is_admin'] = true;
         } else {
-            header('Location: account/account.php');
+            $_SESSION['is_admin'] = false;
         }
+        header('Location: account/account.php');
         exit;
     } else {
         $error = 'Неверный email или пароль.';
