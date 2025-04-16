@@ -1,242 +1,244 @@
 /* === Админка: панель === */
 .admin-panel {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .admin-panel h1 {
-    text-align: center;
-    color: #0077cc;
-    margin-bottom: 40px;
-    font-size: 2rem;
+  text-align: center;
+  color: #0077cc;
+  margin-bottom: 40px;
+  font-size: 2rem;
 }
 
 /* Секция карточек */
 .admin-sections {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 /* Ссылка оборачивает всю карточку */
 .admin-sections a {
-    flex: 1 1 calc(25% - 20px); /* до 4 в ряд */
-    text-decoration: none;
-    color: inherit;
-    min-width: 250px;
+  flex: 1 1 calc(25% - 20px); /* до 4 в ряд */
+  text-decoration: none;
+  color: inherit;
+  min-width: 250px;
 }
 
 /* Карточка */
 .admin-section {
-    background-color: #fff;
-    padding: 30px 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%; /* чтобы все карточки были одного размера */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  background-color: #fff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* чтобы все карточки были одного размера */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Hover-эффект на карточку */
 .admin-sections a:hover .admin-section {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    cursor: pointer;
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 
 /* Заголовок внутри карточки */
 .admin-section h2 {
-    margin-bottom: 15px;
-    font-size: 1.25rem;
-    color: #333;
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+  color: #333;
 }
 
 /* === Общие стили таблиц и форм === */
 main {
-    padding: 20px;
-    /* max-width: 1000px; */
-    margin: 0 auto;
+  padding: 20px;
+  /* max-width: 1000px; */
+  margin: 0 auto;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
-th, td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
+th,
+td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
 }
 
 th {
-    background-color: #f5f5f5;
+  background-color: #f5f5f5;
 }
 
 td a {
-    color: #0077cc;
-    text-decoration: none;
+  color: #0077cc;
+  text-decoration: none;
 }
 
 td a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Формы */
 .admin-form {
-    max-width: 500px;
-    margin: 20px auto;
-    background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  max-width: 500px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .admin-form label {
-    font-weight: 600;
-    color: #555;
+  font-weight: 600;
+  color: #555;
 }
 
 .admin-form input,
 .admin-form select,
 .admin-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: border-color 0.2s ease;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
 }
 
 .admin-form input:focus,
 .admin-form select:focus,
 .admin-form textarea:focus {
-    border-color: #0077cc;
-    outline: none;
+  border-color: #0077cc;
+  outline: none;
 }
 
 .admin-form button,
 .admin-form input[type="submit"] {
-    background-color: #0077cc;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
 }
 
 .admin-form button:hover,
 .admin-form input[type="submit"]:hover {
-    background-color: #005fa3;
+  background-color: #005fa3;
 }
 
-.admin-form .cancel-button {
-    text-decoration: none;
-    background-color: #f0f0f0;
-    color: #333;
-    border: 1px solid #ccc;
-    border: none;
-    padding: 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s;
+.admin-form cancel-button {
+  text-decoration: none;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+  text-align: center;
 }
 
-.admin-form .cancel-button:hover {
-    background-color: #e0e0e0;
+.admin-form cancel-button:hover {
+  background-color: #e0e0e0;
 }
 
 /* Сообщения */
 .message {
-    margin: 10px 0;
-    padding: 12px;
-    border-radius: 6px;
-    font-size: 1rem;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1rem;
 }
 
 .message.success {
-    background-color: #4CAF50;
-    color: white;
-    border: 1px solid #45a049;
+  background-color: #4caf50;
+  color: white;
+  border: 1px solid #45a049;
 }
 
 .message.error {
-    background-color: #f44336;
-    color: white;
-    border: 1px solid #e53935;
+  background-color: #f44336;
+  color: white;
+  border: 1px solid #e53935;
 }
 
 /* Адаптивность */
 @media (max-width: 992px) {
-    .admin-sections a {
-        flex: 1 1 calc(50% - 20px);
-    }
+  .admin-sections a {
+    flex: 1 1 calc(50% - 20px);
+  }
 }
 
 @media (max-width: 600px) {
-    .admin-sections {
-        flex-direction: column;
-        align-items: center;
-    }
-    .admin-sections a {
-        flex: 1 1 100%;
-    }
+  .admin-sections {
+    flex-direction: column;
+    align-items: center;
+  }
+  .admin-sections a {
+    flex: 1 1 100%;
+  }
 }
 
 /* === Таблицы во всю ширину страницы === */
 .main-table-wrapper {
-    margin: 20px 0;          /* отступы сверху/снизу */
-    overflow-x: auto;        /* горизонтальный скролл при необходимости */
-  }
-  
+  margin: 20px 0; /* отступы сверху/снизу */
+  overflow-x: auto; /* горизонтальный скролл при необходимости */
+}
+
+.main-table-wrapper table {
+  width: 100%; /* 100% от контейнера .main-table-wrapper */
+  min-width: 800px; /* не будет слишком уж сжиматься */
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Заголовки и ячейки */
+.main-table-wrapper th,
+.main-table-wrapper td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.main-table-wrapper th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+/* Ссылки внутри таблицы */
+.main-table-wrapper td a {
+  color: #0077cc;
+  text-decoration: none;
+}
+.main-table-wrapper td a:hover {
+  text-decoration: underline;
+}
+
+/* Адаптивная прокрутка */
+@media (max-width: 800px) {
   .main-table-wrapper table {
-    width: 100%;             /* 100% от контейнера .main-table-wrapper */
-    min-width: 800px;        /* не будет слишком уж сжиматься */
-    border-collapse: collapse;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    min-width: 600px;
   }
-  
-  /* Заголовки и ячейки */
-  .main-table-wrapper th,
-  .main-table-wrapper td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
-  }
-  
-  .main-table-wrapper th {
-    background-color: #f5f5f5;
-    font-weight: 600;
-  }
-  
-  /* Ссылки внутри таблицы */
-  .main-table-wrapper td a {
-    color: #0077cc;
-    text-decoration: none;
-  }
-  .main-table-wrapper td a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Адаптивная прокрутка */
-  @media (max-width: 800px) {
-    .main-table-wrapper table {
-      min-width: 600px;
-    }
-  }
-  
-  .text-center {
-    text-align: center;
-  }
+}
+
+.text-center {
+  text-align: center;
+}
