@@ -4,18 +4,10 @@ var $dbname = "rental_db";
 var $username = "webuser";
 var $password = "1";
 
-var $conn;
-
-$conn = mysqli_connect($hostname, $username, $password, $database);
-// try {
-//     $conn = mysqli_connect($this->hostname, $this->username, $this->password, $this->database);
-//     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-//     // Включим режим ошибок
-//     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-// } catch (PDOException $e) {
-//     die("Ошибка подключения к базе данных: " . $e->getMessage());
-// }
-
-if (!$conn) {
-    die("Подключение не удалось: " . mysqli_connect_error());
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Ошибка подключения к базе данных: " . $e->getMessage());
 }
+?>
