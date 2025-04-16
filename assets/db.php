@@ -4,10 +4,10 @@ $dbname = "rental_db";
 $username = "webuser";
 $password = "1";
 
-$conn = mysqli_connect($host, $username, $password, $dbname);
-
-// Проверяем, удалось ли подключиться к базе данных
-if (!$conn) {
-    die("Подключение не удалось: " . mysqli_connect_error());
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Ошибка подключения к базе данных: " . $e->getMessage());
 }
 ?>
