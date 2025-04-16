@@ -9,11 +9,11 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
 
 // Обработка формы
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $name     = trim($_POST['name']);
-    $email    = trim($_POST['email']);
-    $phone    = trim($_POST['phone']);
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $phone = trim($_POST['phone']);
     $password = $_POST['password'];
-    $errors   = [];
+    $errors = [];
 
     // Простая валидация
     if (empty($name) || empty($email) || empty($phone) || empty($password)) {
@@ -54,20 +54,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 <?php endif; ?>
 
-<form method="POST">
-    <label for="name">Имя:</label><br>
-    <input type="text" id="name" name="name" required>
+<div class="form-container">
+    <form method="POST">
+        <label for="name">Имя:</label><br>
+        <input type="text" id="name" name="name" required>
 
-    <label for="email">Электронная почта:</label><br>
-    <input type="email" id="email" name="email" required>
+        <label for="email">Электронная почта:</label><br>
+        <input type="email" id="email" name="email" required>
 
-    <label for="phone">Телефон:</label><br>
-    <input type="text" id="phone" name="phone" required>
+        <label for="phone">Телефон:</label><br>
+        <input type="text" id="phone" name="phone" required>
 
-    <label for="password">Пароль:</label><br>
-    <input type="password" id="password" name="password" required>
+        <label for="password">Пароль:</label><br>
+        <input type="password" id="password" name="password" required>
 
-    <input type="submit" value="Зарегистрироваться">
-</form>
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+</div>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'); ?>
