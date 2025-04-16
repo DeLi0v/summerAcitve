@@ -8,6 +8,8 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
     exit;
 }
 
+echo '<link rel="stylesheet" href="/styles/admin.css">';
+
 // Получаем все бронирования
 $stmt = $pdo->prepare("SELECT bookings.*, users.name AS user_name, equipment.name AS equipment_name 
                        FROM bookings 

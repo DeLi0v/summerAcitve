@@ -8,6 +8,8 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
     exit;
 }
 
+echo '<link rel="stylesheet" href="/styles/admin.css">';
+
 // Получаем все категории
 $stmt = $pdo->prepare("SELECT * FROM categories");
 $stmt->execute();
