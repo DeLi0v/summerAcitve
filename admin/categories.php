@@ -20,14 +20,17 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
 
 <main>
 
-    <?php
-    $back_url = '/admin/panel.php';
-    include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php');
-    ?>
+    <div class="admin-header">
+        <?php
+        $back_url = '/admin/panel.php';
+        include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php');
+        ?>
+        <h1>Управление категориями</h1>
+    </div>
 
-    <h1>Управление категориями</h1>
-
-    <a href="/admin/categories/add_category.php">Добавить категорию</a>
+    <div class="admin-actions">
+        <a href="/admin/categories/add_category.php">Добавить категорию</a>
+    </div>
 
     <div class="main-table-wrapper">
         <table>

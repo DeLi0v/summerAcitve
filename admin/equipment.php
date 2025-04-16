@@ -18,12 +18,13 @@ $equipment = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'); ?>
 
 <main>
-    <h1>Управление оборудованием</h1>
-
-    <?php
-    $back_url = '/admin/panel.php';
-    include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php');
-    ?>
+    <div class="admin-header">
+        <?php
+        $back_url = '/admin/panel.php';
+        include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php');
+        ?>
+        <h1>Управление оборудованием</h1>
+    </div>
 
     <div class="admin-actions">
         <a href="add_equipment.php" class="btn">Добавить оборудование</a>

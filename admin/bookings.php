@@ -22,12 +22,13 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
 ?>
 
 <main>
-    <h1>Управление бронированиями</h1>
-
-    <?php
-    $back_url = '/admin/panel.php';
-    include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php');
-    ?>
+    <div class="admin-header">
+        <?php
+        $back_url = '/admin/panel.php';
+        include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php');
+        ?>
+        <h1>Управление бронированиями</h1>
+    </div>
 
     <div class="main-table-wrapper">
         <table>

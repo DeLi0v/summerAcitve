@@ -23,18 +23,19 @@ unset($_SESSION['message'], $_SESSION['message_type']);
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'); ?>
 
 <main>
-    <h1>Пользователи</h1>
+    <div class="admin-header">
+        <?php
+        $back_url = '/admin/panel.php';
+        include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php');
+        ?>
+        <h1>Пользователи</h1>
+    </div>
 
     <?php if ($message): ?>
         <div class="message <?= htmlspecialchars($message_type) ?>">
             <?= htmlspecialchars($message) ?>
         </div>
     <?php endif; ?>
-
-    <?php
-    $back_url = '/admin/panel.php';
-    include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php');
-    ?>
 
     <div class="main-table-wrapper">
         <table>
