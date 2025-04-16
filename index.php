@@ -5,8 +5,8 @@ include('assets/db.php');
 $page_title = 'Каталог оборудования';
 include('templates/header.php');
 
-$stmt = mysqli_query($conn, "SELECT * FROM equipment WHERE availability > 0");
-$equipments = mysqli_fetch_all($stmt, MYSQLI_ASSOC);
+$stmt = $pdo->query("SELECT * FROM equipment WHERE availability > 0");
+$equipments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <h1>Каталог оборудования</h1>
