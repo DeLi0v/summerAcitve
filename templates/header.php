@@ -10,13 +10,13 @@
 <body>
     <header>
         <div class="logo">
-            <a href="index.php">Аренда оборудования</a>
+            <a href="index.php" class="test">Аренда оборудования</a>
         </div>
         <nav>
             <ul>
                 <li><a href="index.php">Каталог</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
-                    <li><a href="#" class="test">Личный кабинет</a></li>
+                    <li><a href="#">Личный кабинет</a></li>
                     <li><a href="#">Выход</a></li>
                 <?php else: ?>
                     <li><a href="#">Вход</a></li>
