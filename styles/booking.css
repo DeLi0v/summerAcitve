@@ -1,11 +1,9 @@
-/* Общий контейнер */
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Заголовки */
 main h1 {
     font-size: 2rem;
     margin-bottom: 20px;
@@ -15,24 +13,24 @@ main h2 {
     font-size: 1.4rem;
     margin-top: 40px;
     margin-bottom: 15px;
+    text-align: center;
 }
 
-/* Карточка с деталями оборудования */
 .equipment-details-card {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     background-color: #fff;
     padding: 20px;
-    margin: 20px 0;
+    margin: 20px auto;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .equipment-details-card img {
-    width: 300px;
-    height: 200px;
+    width: 320px;
+    height: auto;
     object-fit: cover;
     border-radius: 10px;
     flex-shrink: 0;
@@ -43,18 +41,20 @@ main h2 {
     min-width: 250px;
 }
 
-/* Форма бронирования */
 .booking-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-top: 10px;
+    margin: 20px auto;
     max-width: 400px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .booking-form label {
     font-weight: 500;
-    margin-bottom: 4px;
 }
 
 .booking-form input[type="date"] {
@@ -78,18 +78,18 @@ main h2 {
     background-color: #005fa3;
 }
 
-/* Ошибка */
 .error-message {
-    margin-top: 10px;
+    margin: 20px auto;
+    max-width: 400px;
     color: #b30000;
     background-color: #ffe6e6;
     padding: 10px;
     border-radius: 6px;
     border: 1px solid #ffcccc;
+    text-align: center;
 }
 
-/* Адаптивность */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .equipment-details-card {
         flex-direction: column;
         align-items: center;

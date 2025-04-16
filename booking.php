@@ -98,7 +98,7 @@ include('templates/header.php');
         </div>
     </div>
 
-    <div class="booking-form-container">
+    <div class="equipment-details-card">
         <h2>Выберите даты бронирования</h2>
 
         <?php if (!empty($error)): ?>
