@@ -6,7 +6,7 @@ var $password = "1";
 
 var $conn;
 
-$conn = mysqli_connect($this->hostname, $this->username, $this->password, $this->database);
+$conn = mysqli_connect($hostname, $username, $password, $database);
 // try {
 //     $conn = mysqli_connect($this->hostname, $this->username, $this->password, $this->database);
 //     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
@@ -16,6 +16,6 @@ $conn = mysqli_connect($this->hostname, $this->username, $this->password, $this-
 //     die("Ошибка подключения к базе данных: " . $e->getMessage());
 // }
 
-if (!$this->conn) {
+if (!$conn) {
     die("Подключение не удалось: " . mysqli_connect_error());
 }
