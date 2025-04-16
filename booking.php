@@ -84,32 +84,37 @@ include('templates/header.php');
 
     <div class="equipment-details-card">
         <?php if (!empty($equipment['image_path'])): ?>
-            <img src="<?php echo htmlspecialchars($equipment['image_path']); ?>" alt="<?php echo htmlspecialchars($equipment['name']); ?>">
+            <img src="<?php echo htmlspecialchars($equipment['image_path']); ?>"
+                alt="<?php echo htmlspecialchars($equipment['name']); ?>">
         <?php endif; ?>
 
         <div>
-            <p><strong>Категория:</strong> <?php echo htmlspecialchars($equipment['category_name'] ?? 'Без категории'); ?></p>
+            <p><strong>Категория:</strong>
+                <?php echo htmlspecialchars($equipment['category_name'] ?? 'Без категории'); ?></p>
             <p><strong>Описание:</strong> <?php echo nl2br(htmlspecialchars($equipment['description'])); ?></p>
             <p><strong>Цена за день:</strong> <?php echo htmlspecialchars($equipment['price_per_day']); ?> руб.</p>
-            <p><strong>Доступность:</strong> <?php echo $equipment['availability'] > 0 ? 'В наличии' : 'Нет в наличии'; ?></p>
+            <p><strong>Доступность:</strong>
+                <?php echo $equipment['availability'] > 0 ? 'В наличии' : 'Нет в наличии'; ?></p>
         </div>
     </div>
 
-    <h2>Выберите даты бронирования</h2>
+    <div class="booking-form-container">
+        <h2>Выберите даты бронирования</h2>
 
-    <?php if (!empty($error)): ?>
-        <div class="error-message"><?php echo $error; ?></div>
-    <?php endif; ?>
+        <?php if (!empty($error)): ?>
+            <div class="error-message"><?php echo $error; ?></div>
+        <?php endif; ?>
 
-    <form method="POST" class="booking-form">
-        <label for="start_date">Дата начала:</label>
-        <input type="date" id="start_date" name="start_date" required>
+        <form method="POST" class="booking-form">
+            <label for="start_date">Дата начала:</label>
+            <input type="date" id="start_date" name="start_date" required>
 
-        <label for="end_date">Дата окончания:</label>
-        <input type="date" id="end_date" name="end_date" required>
+            <label for="end_date">Дата окончания:</label>
+            <input type="date" id="end_date" name="end_date" required>
 
-        <button type="submit" class="btn">Забронировать</button>
-    </form>
+            <button type="submit" class="btn">Забронировать</button>
+        </form>
+    </div>
 </main>
 
 <?php include('templates/footer.php'); ?>
