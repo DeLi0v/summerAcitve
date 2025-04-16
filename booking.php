@@ -15,6 +15,7 @@ if (!isset($_GET['equipment_id'])) {
 }
 
 echo '<link rel="stylesheet" href="/styles/booking.css">';
+echo '<link rel="stylesheet" href="/styles/equipment_catalog.css">';
 
 $equipment_id = $_GET['equipment_id'];
 
