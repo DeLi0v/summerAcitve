@@ -7,6 +7,10 @@
     margin-top: 20px;
 }
 
+h2 {
+    font-size: 1.2rem;
+}
+
 .dashboard-info {
     width: 30%; /* Делаем блок с информацией о пользователе узким */
     background-color: #ffffff;
