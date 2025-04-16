@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->execute([$name, $email, $phone, $user_id]);
 
     $_SESSION['success'] = "Профиль успешно обновлён!";
-    header('Location: account/account.php');
+    header('Location: /account/account.php');
     exit;
 }
 ?>
