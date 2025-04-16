@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="logo">
-            <a href="/index.php" class="test">Аренда оборудования</a>
+            <a href="/index.php">Аренда оборудования</a>
         </div>
         <nav>
             <ul>
@@ -23,8 +23,5 @@
                     <li><a href="#">Регистрация</a></li>
                 <?php endif; ?>
             </ul>
-            <div class="test2">
-                <p>test2</p>
-            </div>
         </nav>
     </header>
