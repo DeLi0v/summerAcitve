@@ -57,7 +57,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
         <h1 class="text-center">Редактировать бронирование</h1>
     </div>
 
-    <form method="POST">
+    <form method="POST" class="admin-form">
         <label for="start_date">Дата начала</label>
         <input type="date" id="start_date" name="start_date"
             value="<?php echo htmlspecialchars($booking['start_date']); ?>" required>
