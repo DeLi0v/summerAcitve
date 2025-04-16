@@ -6,11 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo isset($page_title) ? $page_title : 'Аренда оборудования'; ?></title>
     <link rel="stylesheet" href="/assets/styles.css">
-    <style>
-        .test2 {
-            color: #14fa00;
-        }
-    </style>
 </head>
 <body>
     <header>
