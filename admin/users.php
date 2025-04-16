@@ -20,33 +20,36 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <main>
     <h1>Пользователи</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Имя</th>
-                <th>Email</th>
-                <th>Телефон</th>
-                <th>Роль</th>
-                <th>Действия</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($users as $user): ?>
+    <div class="main-table-wrapper">
+        <table>
+            <thead>
                 <tr>
-                    <td><?= $user['id'] ?></td>
-                    <td><?= htmlspecialchars($user['name']) ?></td>
-                    <td><?= htmlspecialchars($user['email']) ?></td>
-                    <td><?= htmlspecialchars($user['phone']) ?></td>
-                    <td><?= htmlspecialchars($user['role']) ?></td>
-                    <td>
-                        <a href="edit_user.php?id=<?= $user['id'] ?>">Редактировать</a> |
-                        <a href="delete_user.php?id=<?= $user['id'] ?>" onclick="return confirm('Удалить пользователя?');">Удалить</a>
-                    </td>
+                    <th>ID</th>
+                    <th>Имя</th>
+                    <th>Email</th>
+                    <th>Телефон</th>
+                    <th>Роль</th>
+                    <th>Действия</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($users as $user): ?>
+                    <tr>
+                        <td><?= $user['id'] ?></td>
+                        <td><?= htmlspecialchars($user['name']) ?></td>
+                        <td><?= htmlspecialchars($user['email']) ?></td>
+                        <td><?= htmlspecialchars($user['phone']) ?></td>
+                        <td><?= htmlspecialchars($user['role']) ?></td>
+                        <td>
+                            <a href="edit_user.php?id=<?= $user['id'] ?>">Редактировать</a> |
+                            <a href="delete_user.php?id=<?= $user['id'] ?>"
+                                onclick="return confirm('Удалить пользователя?');">Удалить</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </main>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'); ?>

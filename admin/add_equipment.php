@@ -2,6 +2,8 @@
 session_start();
 include('../assets/db.php');
 
+echo '<link rel="stylesheet" href="/styles/admin.css">';
+
 // Получаем список категорий
 $stmt = $pdo->query("SELECT id, name FROM categories ORDER BY name");
 $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);

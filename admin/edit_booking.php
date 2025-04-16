@@ -13,6 +13,7 @@ if (!isset($_GET['id'])) {
     exit;
 }
 
+echo '<link rel="stylesheet" href="/styles/admin.css">';
 $booking_id = $_GET['id'];
 
 // Получаем информацию о бронировании

@@ -23,25 +23,28 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
 
     <a href="/admin/categories/add_category.php">Добавить категорию</a>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Название</th>
-                <th>Действия</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($categories as $category): ?>
+    <div class="main-table-wrapper">
+        <table>
+            <thead>
                 <tr>
-                    <td><?php echo htmlspecialchars($category['name']); ?></td>
-                    <td>
-                        <a href="edit_category.php?id=<?php echo $category['id']; ?>">Редактировать</a>
-                        <a href="delete_category.php?id=<?php echo $category['id']; ?>" onclick="return confirm('Вы уверены?')">Удалить</a>
-                    </td>
+                    <th>Название</th>
+                    <th>Действия</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($categories as $category): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($category['name']); ?></td>
+                        <td>
+                            <a href="edit_category.php?id=<?php echo $category['id']; ?>">Редактировать</a>
+                            <a href="delete_category.php?id=<?php echo $category['id']; ?>"
+                                onclick="return confirm('Вы уверены?')">Удалить</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </main>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'); ?>

@@ -24,37 +24,40 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
 <main>
     <h1>Управление бронированиями</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Пользователь</th>
-                <th>Оборудование</th>
-                <th>Дата начала</th>
-                <th>Дата окончания</th>
-                <th>Статус</th>
-                <th>Итоговая стоимость</th>
-                <th>Действия</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($bookings as $booking): ?>
+    <div class="main-table-wrapper">
+        <table>
+            <thead>
                 <tr>
-                    <td><?php echo htmlspecialchars($booking['user_name']); ?></td>
-                    <td><?php echo htmlspecialchars($booking['equipment_name']); ?></td>
-                    <td><?php echo htmlspecialchars($booking['start_date']); ?></td>
-                    <td><?php echo htmlspecialchars($booking['end_date']); ?></td>
-                    <td><?php echo htmlspecialchars($booking['status']); ?></td>
-                    <td><?php echo htmlspecialchars($booking['total_price']); ?> руб.</td>
-                    <td>
-                        <a href="view_booking.php?id=<?php echo $booking['id']; ?>">Просмотреть</a>
-                        <?php if ($booking['status'] == 'В обработке'): ?>
-                            <a href="cancel_booking.php?id=<?php echo $booking['id']; ?>" onclick="return confirm('Вы уверены?')">Отменить</a>
-                        <?php endif; ?>
-                    </td>
+                    <th>Пользователь</th>
+                    <th>Оборудование</th>
+                    <th>Дата начала</th>
+                    <th>Дата окончания</th>
+                    <th>Статус</th>
+                    <th>Итоговая стоимость</th>
+                    <th>Действия</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($bookings as $booking): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($booking['user_name']); ?></td>
+                        <td><?php echo htmlspecialchars($booking['equipment_name']); ?></td>
+                        <td><?php echo htmlspecialchars($booking['start_date']); ?></td>
+                        <td><?php echo htmlspecialchars($booking['end_date']); ?></td>
+                        <td><?php echo htmlspecialchars($booking['status']); ?></td>
+                        <td><?php echo htmlspecialchars($booking['total_price']); ?> руб.</td>
+                        <td>
+                            <a href="view_booking.php?id=<?php echo $booking['id']; ?>">Просмотреть</a>
+                            <?php if ($booking['status'] == 'В обработке'): ?>
+                                <a href="cancel_booking.php?id=<?php echo $booking['id']; ?>"
+                                    onclick="return confirm('Вы уверены?')">Отменить</a>
+                            <?php endif; ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </main>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'); ?>

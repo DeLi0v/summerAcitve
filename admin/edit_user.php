@@ -8,6 +8,8 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     exit;
 }
 
+echo '<link rel="stylesheet" href="/styles/admin.css">';
+
 // Получение ID пользователя из URL
 if (!isset($_GET['id'])) {
     header('Location: admin_users.php');

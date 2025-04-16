@@ -24,33 +24,36 @@ $equipment = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <a href="add_equipment.php" class="btn">Добавить оборудование</a>
     </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Название</th>
-                <th>Категория</th>
-                <th>Цена (руб/день)</th>
-                <th>В наличии</th>
-                <th>Добавлено</th>
-                <th>Действия</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($equipment as $item): ?>
+    <div class="main-table-wrapper">
+        <table>
+            <thead>
                 <tr>
-                    <td><?php echo htmlspecialchars($item['name']); ?></td>
-                    <td><?php echo htmlspecialchars($item['category_name'] ?? 'Без категории'); ?></td>
-                    <td><?php echo $item['price_per_day']; ?></td>
-                    <td><?php echo $item['availability']; ?></td>
-                    <td><?php echo date('d.m.Y', strtotime($item['created_at'])); ?></td>
-                    <td>
-                        <a href="edit_equipment.php?id=<?php echo $item['id']; ?>">Редактировать</a> |
-                        <a href="delete_equipment.php?id=<?php echo $item['id']; ?>" onclick="return confirm('Вы уверены, что хотите удалить это оборудование?');">Удалить</a>
-                    </td>
+                    <th>Название</th>
+                    <th>Категория</th>
+                    <th>Цена (руб/день)</th>
+                    <th>В наличии</th>
+                    <th>Добавлено</th>
+                    <th>Действия</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($equipment as $item): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($item['name']); ?></td>
+                        <td><?php echo htmlspecialchars($item['category_name'] ?? 'Без категории'); ?></td>
+                        <td><?php echo $item['price_per_day']; ?></td>
+                        <td><?php echo $item['availability']; ?></td>
+                        <td><?php echo date('d.m.Y', strtotime($item['created_at'])); ?></td>
+                        <td>
+                            <a href="edit_equipment.php?id=<?php echo $item['id']; ?>">Редактировать</a> |
+                            <a href="delete_equipment.php?id=<?php echo $item['id']; ?>"
+                                onclick="return confirm('Вы уверены, что хотите удалить это оборудование?');">Удалить</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </main>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'); ?>

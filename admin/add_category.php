@@ -2,6 +2,8 @@
 session_start();
 include($_SERVER['DOCUMENT_ROOT'] . '/assets/db.php');
 
+echo '<link rel="stylesheet" href="/styles/admin.css">';
+
 // Проверяем, является ли пользователь администратором
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
     header('Location: /login.php');

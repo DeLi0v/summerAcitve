@@ -177,3 +177,46 @@ td a:hover {
         flex: 1 1 100%;
     }
 }
+
+/* === Таблицы во всю ширину страницы === */
+.main-table-wrapper {
+    margin: 20px 0;          /* отступы сверху/снизу */
+    overflow-x: auto;        /* горизонтальный скролл при необходимости */
+  }
+  
+  .main-table-wrapper table {
+    width: 100%;             /* 100% от контейнера .main-table-wrapper */
+    min-width: 800px;        /* не будет слишком уж сжиматься */
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  
+  /* Заголовки и ячейки */
+  .main-table-wrapper th,
+  .main-table-wrapper td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .main-table-wrapper th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+  }
+  
+  /* Ссылки внутри таблицы */
+  .main-table-wrapper td a {
+    color: #0077cc;
+    text-decoration: none;
+  }
+  .main-table-wrapper td a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Адаптивная прокрутка */
+  @media (max-width: 800px) {
+    .main-table-wrapper table {
+      min-width: 600px;
+    }
+  }
+  
