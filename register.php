@@ -1,9 +1,11 @@
 <?php
 session_start();
-include('assets/db.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/assets/db.php');
+
+echo '<link rel="stylesheet" href="/styles/register.css">';
 
 $page_title = 'Регистрация';
-include('templates/header.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
 
 // Обработка формы
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -68,4 +70,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input type="submit" value="Зарегистрироваться">
 </form>
 
-<?php include('templates/footer.php'); ?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'); ?>
