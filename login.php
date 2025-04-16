@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($user['role'] == 'admin') {
             header('Location: panel.php');
         } else {
-            header('Location: dashboard.php');
+            header('Location: ' . $_SERVER['DOCUMENT_ROOT'] .  'dashboard.php');
         }
         exit;
     } else {
@@ -52,8 +52,8 @@ include('templates/header.php');
     </form>
 
     <div class="form-link">
-        Нет аккаунта? <a href="register.php">Зарегистрируйтесь</a>
+        Нет аккаунта? <a href="/register.php">Зарегистрируйтесь</a>
     </div>
 </div>
 
-<?php include('templates/footer.php'); ?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . 'templates/footer.php'); ?>
