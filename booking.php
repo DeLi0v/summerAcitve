@@ -14,6 +14,8 @@ if (!isset($_GET['equipment_id'])) {
     exit;
 }
 
+echo '<link rel="stylesheet" href="/styles/booking.css">';
+
 $equipment_id = $_GET['equipment_id'];
 
 // Получаем информацию об оборудовании с категорией

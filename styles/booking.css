@@ -1,0 +1,59 @@
+.equipment-details-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.equipment-details-card img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px;
+    max-width: 400px;
+}
+
+.booking-form label {
+    font-weight: 500;
+}
+
+.booking-form input[type="date"] {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.booking-form .btn {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.booking-form .btn:hover {
+    background-color: #005fa3;
+}
+
+.error-message {
+    margin: 20px;
+    color: #b30000;
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ffcccc;
+}
