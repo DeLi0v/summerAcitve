@@ -51,6 +51,8 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
 <main>
     <h1 class="text-center">Редактировать бронирование</h1>
 
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php'); ?>
+
     <form method="POST">
         <label for="start_date">Дата начала</label>
         <input type="date" id="start_date" name="start_date" value="<?php echo htmlspecialchars($booking['start_date']); ?>" required>
@@ -66,6 +68,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
         </select>
 
         <input type="submit" value="Сохранить изменения">
+        <a href="/admin/bookings.php" class="cancel-button">Отмена</a>
     </form>
 </main>
 

@@ -20,6 +20,8 @@ $equipment = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <main>
     <h1>Управление оборудованием</h1>
 
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php'); ?>
+
     <div class="admin-actions">
         <a href="add_equipment.php" class="btn">Добавить оборудование</a>
     </div>

@@ -21,6 +21,8 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
 <main>
     <h1>Управление категориями</h1>
 
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php'); ?>
+
     <a href="/admin/categories/add_category.php">Добавить категорию</a>
 
     <div class="main-table-wrapper">

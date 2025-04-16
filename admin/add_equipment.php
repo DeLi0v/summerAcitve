@@ -86,6 +86,7 @@ echo '<link rel="stylesheet" href="/styles/admin.css">';
         <input type="file" name="image" id="image" accept="image/*">
 
         <input type="submit" value="Добавить оборудование">
+        <a href="/admin/equipment.php" class="cancel-button">Отмена</a>
     </form>
 </main>
 

@@ -115,6 +115,7 @@ echo '<link rel="stylesheet" href="/styles/admin.css">';
         <input type="file" name="image" id="image" accept="image/*">
 
         <input type="submit" value="Сохранить изменения">
+        <a href="/admin/equipment.php" class="cancel-button">Отмена</a>
     </form>
 </main>
 

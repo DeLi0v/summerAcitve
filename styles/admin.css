@@ -223,3 +223,21 @@ td a:hover {
   .text-center {
     text-align: center;
   }
+
+  .back-button {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #eee;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #ddd;
+    color: #000;
+}

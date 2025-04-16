@@ -34,6 +34,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
         <input type="text" id="name" name="name" required>
 
         <input type="submit" value="Добавить категорию">
+        <a href="/admin/categories.php" class="cancel-button">Отмена</a>
     </form>
 </main>
 
