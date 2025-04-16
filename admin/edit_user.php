@@ -33,6 +33,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $phone = $_POST['phone'];
     $role  = $_POST['role'];
 
+    // Проверка роли
+    if ($role !== 'user' && $role !== 'admin') {
+        echo "Некорректное значение роли.";
+        exit;
+    }
+
+    // Обновление данных пользователя
     $stmt = $pdo->prepare("UPDATE users SET name = ?, email = ?, phone = ?, role = ? WHERE id = ?");
     $stmt->execute([$name, $email, $phone, $role, $user_id]);
 
