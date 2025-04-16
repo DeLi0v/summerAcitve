@@ -1,0 +1,45 @@
+<?php
+session_start();
+include($_SERVER['DOCUMENT_ROOT'] . '/assets/db.php');
+
+// Проверяем, является ли пользователь администратором
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
+    header('Location: /login.php');
+    exit;
+}
+
+// Получаем все категории
+$stmt = $pdo->prepare("SELECT * FROM categories");
+$stmt->execute();
+$categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
+?>
+
+<main>
+    <h1>Управление категориями</h1>
+
+    <a href="/admin/categories/add_category.php">Добавить категорию</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($categories as $category): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($category['name']); ?></td>
+                    <td>
+                        <a href="edit_category.php?id=<?php echo $category['id']; ?>">Редактировать</a>
+                        <a href="delete_category.php?id=<?php echo $category['id']; ?>" onclick="return confirm('Вы уверены?')">Удалить</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</main>
+
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'); ?>

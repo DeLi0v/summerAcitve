@@ -1,10 +1,10 @@
 <?php
 // index.php
 session_start();
-include('assets/db.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/assets/db.php');
 
 $page_title = 'Каталог оборудования';
-include('templates/header.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
 
 $stmt = $pdo->query("SELECT * FROM equipment WHERE availability > 0");
 $equipments = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -17,7 +17,7 @@ $equipments = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach ($equipments as $equipment): ?>
             <div class="equipment-card">
                 <h3><?php echo $equipment['name']; ?></h3>
-                <p><strong>Категория:</strong> <?php echo htmlspecialchars($equipment['category']); ?></p>
+                <p><strong>Категория:</strong> <?php echo htmlspecialchars($equipment['category_id']); ?></p>
                 <p><strong>Цена за день:</strong> <?php echo $equipment['price_per_day']; ?> руб.</p>
                 <a href="booking.php?equipment_id=<?php echo $equipment['id']; ?>">Забронировать</a>
             </div>
@@ -27,4 +27,4 @@ $equipments = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <p>На данный момент всё оборудование недоступно.</p>
 <?php endif; ?>
 
-<?php include('templates/footer.php'); ?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'); ?>
