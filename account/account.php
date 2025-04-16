@@ -4,7 +4,7 @@ session_start();
 include('assets/db.php');
 
 // Подключаем CSS для личного кабинета
-echo '<link rel="stylesheet" href="assets/styles/account.css">';
+// echo '<link rel="stylesheet" href="assets/styles/account.css">';
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: /login.php');
