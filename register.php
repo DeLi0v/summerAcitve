@@ -44,28 +44,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <h1>Регистрация</h1>
 
-<?php if (!empty($errors)): ?>
-    <div class="error">
-        <ul>
-            <?php foreach ($errors as $error): ?>
-                <li><?php echo htmlspecialchars($error); ?></li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
-<?php endif; ?>
-
 <div class="form-container">
+    <?php if (!empty($errors)): ?>
+        <div class="error">
+            <ul>
+                <?php foreach ($errors as $error): ?>
+                    <li><?php echo htmlspecialchars($error); ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    <?php endif; ?>
+
     <form method="POST">
-        <label for="name">Имя:</label><br>
+        <label for="name">Имя:</label>
         <input type="text" id="name" name="name" required>
 
-        <label for="email">Электронная почта:</label><br>
+        <label for="email">Электронная почта:</label>
         <input type="email" id="email" name="email" required>
 
-        <label for="phone">Телефон:</label><br>
+        <label for="phone">Телефон:</label>
         <input type="text" id="phone" name="phone" required>
 
-        <label for="password">Пароль:</label><br>
+        <label for="password">Пароль:</label>
         <input type="password" id="password" name="password" required>
 
         <input type="submit" value="Зарегистрироваться">
