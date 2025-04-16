@@ -1,3 +1,8 @@
+<?php // Включаем вывод ошибок, чтобы видеть, если что-то не так
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+?>
+
 <!-- templates/header.php -->
 <!DOCTYPE html>
 <html lang="ru">
