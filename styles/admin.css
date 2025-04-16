@@ -252,35 +252,33 @@ td a:hover {
 }
 
 .admin-header {
-    display: flex;
-    justify-content: center; /* центрируем заголовок */
-    align-items: center;
-    position: relative; /* нужно для абсолютного позиционирования кнопки */
-    margin-bottom: 1.5rem;
-  }
-  
-  .admin-header h1 {
-    margin: 0;
-    text-align: center;
-  }
-  
-  .back-button {
-    position: absolute;
-    left: 0;
-    padding: 8px 16px;
-    color: #333;
-    text-decoration: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .back-button:hover {
-    text-decoration: underline;
-    background-color: transparent;
-  }
-  
+  display: flex;
+  justify-content: center; /* центрируем заголовок */
+  align-items: center;
+  position: relative; /* нужно для абсолютного позиционирования кнопки */
+  margin-bottom: 1.5rem;
+}
 
+.admin-header h1 {
+  margin: 0;
+  text-align: center;
+}
+
+.back-button {
+  position: absolute;
+  left: 0;
+  padding: 8px 16px;
+  color: #333;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+  background-color: transparent;
+}
 
 .admin-actions {
   display: flex;
