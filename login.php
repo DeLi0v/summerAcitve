@@ -3,6 +3,8 @@
 session_start();
 include('assets/db.php');
 
+echo '<link rel="stylesheet" href="assets/login.css">';
+
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
