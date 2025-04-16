@@ -42,14 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $end_date = $_POST['end_date'];
     $user_id = $_SESSION['user_id'];
 
-    // Проверка корректности дат
     if (strtotime($end_date) <= strtotime($start_date)) {
         $error = "Дата окончания должна быть позже даты начала.";
     } else {
         $days = (strtotime($end_date) - strtotime($start_date)) / (60 * 60 * 24);
         $total_price = $equipment['price_per_day'] * $days;
 
-        // Проверка доступности
         $stmt = $pdo->prepare("
             SELECT * FROM bookings 
             WHERE equipment_id = ? 
@@ -61,7 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($existing_booking) {
             $error = "Оборудование уже забронировано на выбранные даты.";
         } else {
-            // Добавление бронирования
             $stmt = $pdo->prepare("
                 INSERT INTO bookings (user_id, equipment_id, start_date, end_date, status, total_price) 
                 VALUES (?, ?, ?, ?, 'В обработке', ?)
@@ -79,42 +76,37 @@ include('templates/header.php');
 ?>
 
 <main class="container">
-
     <h1>Бронирование: <?php echo htmlspecialchars($equipment['name']); ?></h1>
 
     <div class="equipment-details-card">
         <?php if (!empty($equipment['image_path'])): ?>
-            <img src="<?php echo htmlspecialchars($equipment['image_path']); ?>"
-                alt="<?php echo htmlspecialchars($equipment['name']); ?>">
+            <img src="<?php echo '/' . ltrim($equipment['image_path'], '/'); ?>"
+                 alt="<?php echo htmlspecialchars($equipment['name']); ?>">
         <?php endif; ?>
 
         <div>
-            <p><strong>Категория:</strong>
-                <?php echo htmlspecialchars($equipment['category_name'] ?? 'Без категории'); ?></p>
+            <p><strong>Категория:</strong> <?php echo htmlspecialchars($equipment['category_name'] ?? 'Без категории'); ?></p>
             <p><strong>Описание:</strong> <?php echo nl2br(htmlspecialchars($equipment['description'])); ?></p>
             <p><strong>Цена за день:</strong> <?php echo htmlspecialchars($equipment['price_per_day']); ?> руб.</p>
-            <p><strong>Доступность:</strong>
-                <?php echo $equipment['availability'] > 0 ? 'В наличии' : 'Нет в наличии'; ?></p>
+            <p><strong>Доступность:</strong> <?php echo $equipment['availability'] > 0 ? 'В наличии' : 'Нет в наличии'; ?></p>
         </div>
     </div>
 
-    <div class="equipment-details-card">
-        <h2>Выберите даты бронирования</h2>
+    <h2>Выберите даты бронирования</h2>
 
-        <?php if (!empty($error)): ?>
-            <div class="error-message"><?php echo $error; ?></div>
-        <?php endif; ?>
+    <?php if (!empty($error)): ?>
+        <div class="error-message"><?php echo $error; ?></div>
+    <?php endif; ?>
 
-        <form method="POST" class="booking-form">
-            <label for="start_date">Дата начала:</label>
-            <input type="date" id="start_date" name="start_date" required>
+    <form method="POST" class="booking-form">
+        <label for="start_date">Дата начала:</label>
+        <input type="date" id="start_date" name="start_date" required>
 
-            <label for="end_date">Дата окончания:</label>
-            <input type="date" id="end_date" name="end_date" required>
+        <label for="end_date">Дата окончания:</label>
+        <input type="date" id="end_date" name="end_date" required>
 
-            <button type="submit" class="btn">Забронировать</button>
-        </form>
-    </div>
+        <button type="submit" class="btn">Забронировать</button>
+    </form>
 </main>
 
 <?php include('templates/footer.php'); ?>
