@@ -3,6 +3,9 @@
 session_start();
 include('assets/db.php');
 
+// Подключаем CSS для страницы входа
+echo '<link rel="stylesheet" href="assets/styles/login.css">';
+
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -18,9 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['role'] = $user['role'];
 
         if ($user['role'] == 'admin') {
-            header('Location: /admin/panel.php');
+            header('Location: panel.php');
         } else {
-            header('Location: /account/account.php');
+            header('Location: dashboard.php');
         }
         exit;
     } else {
@@ -52,8 +55,8 @@ include('templates/header.php');
     </form>
 
     <div class="form-link">
-        Нет аккаунта? <a href="/register.php">Зарегистрируйтесь</a>
+        Нет аккаунта? <a href="register.php">Зарегистрируйтесь</a>
     </div>
 </div>
 
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'); ?>
+<?php include('templates/footer.php'); ?>
