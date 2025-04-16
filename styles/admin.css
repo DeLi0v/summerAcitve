@@ -142,11 +142,16 @@ td a:hover {
 }
 
 .admin-form .cancel-button {
+    text-decoration: none;
     background-color: #f0f0f0;
     color: #333;
     border: 1px solid #ccc;
+    border: none;
+    padding: 12px;
     border-radius: 6px;
-    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
 }
 
 .admin-form .cancel-button:hover {
