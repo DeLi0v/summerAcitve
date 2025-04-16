@@ -34,20 +34,26 @@ include('templates/header.php');
 
 <h1>Вход</h1>
 
-<?php if ($error): ?>
-    <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
-<?php endif; ?>
+<div class="form-container">
+    <?php if ($error): ?>
+        <div class="error" style="text-align: center; max-width: 500px;">
+            <?php echo htmlspecialchars($error); ?>
+        </div>
+    <?php endif; ?>
 
-<form method="POST">
-    <label for="email">Email:</label><br>
-    <input type="email" name="email" id="email" required><br><br>
+    <form method="POST">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
 
-    <label for="password">Пароль:</label><br>
-    <input type="password" name="password" id="password" required><br><br>
+        <label for="password">Пароль:</label>
+        <input type="password" name="password" id="password" required>
 
-    <input type="submit" value="Войти">
-</form>
+        <input type="submit" value="Войти">
+    </form>
 
-<p>Нет аккаунта? <a href="register.php">Зарегистрируйтесь</a></p>
+    <div class="form-link">
+        Нет аккаунта? <a href="register.php">Зарегистрируйтесь</a>
+    </div>
+</div>
 
 <?php include('templates/footer.php'); ?>
