@@ -31,7 +31,10 @@ unset($_SESSION['message'], $_SESSION['message_type']);
         </div>
     <?php endif; ?>
 
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php'); ?>
+    <?php
+    $back_url = '/admin/panel.php';
+    include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php');
+    ?>
 
     <div class="main-table-wrapper">
         <table>

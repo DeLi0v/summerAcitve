@@ -89,7 +89,7 @@ if (!$user) {
         </select>
 
         <button type="submit">Сохранить</button>
-        <a href="/admin/bookings.php" class="cancel-button">Отмена</a>
+        <a href="/admin/users.php" class="cancel-button">Отмена</a>
     </form>
 </main>
 

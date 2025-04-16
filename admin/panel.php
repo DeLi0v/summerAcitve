@@ -15,8 +15,6 @@ echo '<link rel="stylesheet" href="/styles/admin.css">';
 <main class="admin-panel">
     <h1>Административная панель</h1>
 
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php'); ?>
-
     <div class="admin-sections">
         <a href="users.php">
             <div class="admin-section">
@@ -43,6 +41,11 @@ echo '<link rel="stylesheet" href="/styles/admin.css">';
                 <h2>Категории оборудования</h2>
             </div>
         </a>
+
+        <?php
+        $back_url = '/account/account.php';
+        include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php');
+        ?>
     </div>
 </main>
 
