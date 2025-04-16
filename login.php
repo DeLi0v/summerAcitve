@@ -3,9 +3,6 @@
 session_start();
 include('assets/db.php');
 
-// Подключаем CSS для страницы входа
-echo '<link rel="stylesheet" href="assets/styles/login.css">';
-
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -21,9 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['role'] = $user['role'];
 
         if ($user['role'] == 'admin') {
-            header('Location: panel.php');
+            header('Location: admin/panel.php');
         } else {
-            header('Location: dashboard.php');
+            header('Location: account/account.php');
         }
         exit;
     } else {
@@ -59,4 +56,4 @@ include('templates/header.php');
     </div>
 </div>
 
-<?php include('templates/footer.php'); ?>
+<?php include($_SERVER['DOCUMENT_ROOT'] .  'templates/footer.php'); ?>
