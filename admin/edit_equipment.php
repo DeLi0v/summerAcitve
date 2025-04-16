@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare("UPDATE equipment SET name = ?, category_id = ?, description = ?, price_per_day = ?, availability = ?, image_path = ? WHERE id = ?");
         $stmt->execute([$name, $category_id, $description, $price_per_day, $availability, $image_path, $equipment_id]);
 
-        header("Location: admin_equipment.php");
+        header("Location: equipment.php");
         exit;
     }
 }
