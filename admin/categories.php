@@ -29,7 +29,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
     </div>
 
     <div class="admin-actions">
-        <a href="/admin/categories/add_category.php">Добавить категорию</a>
+        <a href="/admin/add_category.php">Добавить категорию</a>
     </div>
 
     <div class="main-table-wrapper">
