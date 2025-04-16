@@ -45,7 +45,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
                     <tr>
                         <td><?php echo htmlspecialchars($category['name']); ?></td>
                         <td>
-                            <a href="edit_category.php?id=<?php echo $category['id']; ?>">Редактировать</a>
+                            <a href="edit_category.php?id=<?php echo $category['id']; ?>">Редактировать</a> |
                             <a href="delete_category.php?id=<?php echo $category['id']; ?>"
                                 onclick="return confirm('Вы уверены?')">Удалить</a>
                         </td>
