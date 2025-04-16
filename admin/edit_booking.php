@@ -68,10 +68,9 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
 
         <label for="status">Статус</label>
         <select id="status" name="status" required>
-            <option value="В обработке" <?php echo $booking['status'] == 'В обработке' ? 'selected' : ''; ?>>В обработке
-            </option>
-            <option value="Подтверждено" <?php echo $booking['status'] == 'Подтверждено' ? 'selected' : ''; ?>>
-                Подтверждено</option>
+            <option value="В обработке" <?php echo $booking['status'] == 'В обработке' ? 'selected' : ''; ?>>В обработке</option>
+            <option value="Подтверждено" <?php echo $booking['status'] == 'Подтверждено' ? 'selected' : ''; ?>>Подтверждено</option>
+            <option value="Выдано" <?php echo $booking['status'] == 'Выдано' ? 'selected' : ''; ?>>Выдано</option>
             <option value="Отменено" <?php echo $booking['status'] == 'Отменено' ? 'selected' : ''; ?>>Отменено</option>
         </select>
 
