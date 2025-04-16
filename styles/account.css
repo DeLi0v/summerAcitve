@@ -61,3 +61,18 @@ td a {
 td a:hover {
     color: #005fa3;
 }
+
+.admin-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.admin-button:hover {
+    background-color: #0056b3;
+}
