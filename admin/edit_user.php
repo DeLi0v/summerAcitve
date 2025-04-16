@@ -50,9 +50,11 @@ if (!$user) {
         else {
             $stmt = $pdo->prepare("UPDATE users SET name = ?, email = ?, phone = ?, role = ? WHERE id = ?");
             $stmt->execute([$name, $email, $phone, $role, $user_id]);
-
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            
             $message = "Данные пользователя успешно обновлены.";
             $message_type = "success";  // Тип сообщения: успех
+                
         }
     }
 }
