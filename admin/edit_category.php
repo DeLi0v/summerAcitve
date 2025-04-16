@@ -46,7 +46,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
 <main>
     <h1 class="text-center">Редактировать категорию</h1>
 
-    <form method="POST">
+    <form method="POST" class="admin-form">
         <label for="name">Название категории</label>
         <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($category['name']); ?>" required>
 
