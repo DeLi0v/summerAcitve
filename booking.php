@@ -87,7 +87,14 @@ include('templates/header.php');
 ?>
 
 <main class="container">
-    <h1>Бронирование: <?php echo htmlspecialchars($equipment['name']); ?></h1>
+    <div class="title-back-header">
+        <?php
+        $back_url = '/index.php';
+        include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php');
+        ?>
+        <h1>Бронирование: <?php echo htmlspecialchars($equipment['name']); ?></h1>
+    </div>
+    
 
     <div class="equipment-details-card">
         <?php if (!empty($equipment['image_path'])): ?>

@@ -1,89 +1,106 @@
 /* Общие стили */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    line-height: 1.6;
-    padding-bottom: 60px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  padding-bottom: 60px;
 }
 
 /* Header */
 header {
-    background-color: #0077cc;
-    color: white;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #0077cc;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.4em;
-    font-weight: bold;
+  text-decoration: none;
+  color: white;
+  font-size: 1.4em;
+  font-weight: bold;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
+  list-style: none;
+  display: flex;
+  gap: 15px;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    transition: color 0.2s ease-in-out;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
 }
 
 nav ul li a:hover {
-    color: #ffd700;
+  color: #ffd700;
 }
 
 /* Основной контент */
-main, h1, h2, h3, p {
-    margin: 20px 20px;
-    /* width: 90%; */
-    /* max-width: 1000px; */
+main,
+h1,
+h2,
+h3,
+p {
+  margin: 20px 20px;
+  /* width: 90%; */
+  /* max-width: 1000px; */
 }
 
 /* Стили для ссылок */
 a {
-    color: #0077cc;
-    text-decoration: none;
+  color: #0077cc;
+  text-decoration: none;
 }
 
 a:hover {
-    color: #005fa3;
+  color: #005fa3;
 }
 
 /* Footer */
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #0077cc;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #0077cc;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
 }
 
 .back-button {
-    display: inline-block;
-    padding: 8px 16px;
-    color: #333;
-    text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  color: #333;
+  text-decoration: none;
 }
 
 .back-button:hover {
-    text-decoration: none;
-    background-color: transparent;
-  }
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.title-back-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.title-back-header h1 {
+  margin: 0;
+  text-align: center;
+}
