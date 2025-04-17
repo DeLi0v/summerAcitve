@@ -2,8 +2,7 @@
 session_start();
 include($_SERVER['DOCUMENT_ROOT'] . '/assets/db.php');
 
-// Проверяем, является ли пользователь администратором
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
+if (!isset($_SESSION['user_id'])) {
     header('Location: /login.php');
     exit;
 }
