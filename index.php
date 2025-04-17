@@ -7,21 +7,52 @@ echo '<link rel="stylesheet" href="/styles/equipment_catalog.css">';
 $page_title = 'Каталог оборудования';
 include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
 
+// Получаем текущую дату
+$today = date('Y-m-d');
+
 // Запрашиваем оборудование с категориями
 $stmt = $pdo->query("
     SELECT e.*, c.name AS category_name
     FROM equipment e
     LEFT JOIN categories c ON e.category_id = c.id
-    WHERE e.availability > 0
 ");
 $equipments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Получаем количество активных бронирований для каждого оборудования
+$booking_stmt = $pdo->prepare("
+    SELECT equipment_id, COUNT(*) AS active_bookings
+    FROM bookings
+    WHERE status != 'Отменено'
+      AND start_date <= :today
+      AND end_date >= :today
+    GROUP BY equipment_id
+");
+$booking_stmt->execute(['today' => $today]);
+$bookings = $booking_stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Преобразуем в удобный массив
+$active_counts = [];
+foreach ($bookings as $row) {
+    $active_counts[$row['equipment_id']] = $row['active_bookings'];
+}
+
+// Фильтруем доступное оборудование
+$available_equipments = [];
+foreach ($equipments as $equipment) {
+    $total = (int)$equipment['availability'];
+    $used = $active_counts[$equipment['id']] ?? 0;
+
+    if ($total - $used > 0) {
+        $available_equipments[] = $equipment;
+    }
+}
 ?>
 
 <h1>Каталог оборудования</h1>
 
-<?php if (count($equipments) > 0): ?>
+<?php if (count($available_equipments) > 0): ?>
     <div class="equipment-container">
-        <?php foreach ($equipments as $equipment): ?>
+        <?php foreach ($available_equipments as $equipment): ?>
             <div class="equipment-card">
                 <?php if (!empty($equipment['image_path'])): ?>
                     <img src="<?php echo htmlspecialchars($equipment['image_path']); ?>" alt="<?php echo htmlspecialchars($equipment['name']); ?>">

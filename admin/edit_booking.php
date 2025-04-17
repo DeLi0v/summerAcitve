@@ -2,7 +2,7 @@
 session_start();
 include($_SERVER['DOCUMENT_ROOT'] . '/assets/db.php');
 
-// Проверяем, является ли пользователь администратором
+// Проверка прав администратора
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
     header('Location: /login.php');
     exit;
@@ -17,7 +17,7 @@ echo '<link rel="stylesheet" href="/styles/admin.css">';
 $booking_id = $_GET['id'];
 
 // Получаем информацию о бронировании
-$stmt = $pdo->prepare("SELECT bookings.*, users.name AS user_name, equipment.name AS equipment_name 
+$stmt = $pdo->prepare("SELECT bookings.*, users.name AS user_name, equipment.name AS equipment_name, bookings.equipment_id
                        FROM bookings 
                        JOIN users ON bookings.user_id = users.id
                        JOIN equipment ON bookings.equipment_id = equipment.id
@@ -30,15 +30,17 @@ if (!$booking) {
     exit;
 }
 
-// Обработка формы редактирования бронирования
+$old_status = $booking['status'];
+$equipment_id = $booking['equipment_id'];
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $start_date = $_POST['start_date'];
     $end_date = $_POST['end_date'];
-    $status = $_POST['status'];
+    $new_status = $_POST['status'];
 
     // Обновляем информацию о бронировании
     $stmt = $pdo->prepare("UPDATE bookings SET start_date = ?, end_date = ?, status = ? WHERE id = ?");
-    $stmt->execute([$start_date, $end_date, $status, $booking_id]);
+    $stmt->execute([$start_date, $end_date, $new_status, $booking_id]);
 
     $_SESSION['success'] = "Бронирование успешно обновлено!";
     header('Location: /admin/bookings.php');
@@ -63,8 +65,8 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
             value="<?php echo htmlspecialchars($booking['start_date']); ?>" required>
 
         <label for="end_date">Дата окончания</label>
-        <input type="date" id="end_date" name="end_date" value="<?php echo htmlspecialchars($booking['end_date']); ?>"
-            required>
+        <input type="date" id="end_date" name="end_date"
+            value="<?php echo htmlspecialchars($booking['end_date']); ?>" required>
 
         <label for="status">Статус</label>
         <select id="status" name="status" required>

@@ -36,7 +36,6 @@ if (!$equipment) {
 $error = '';
 $success = '';
 
-// Обработка формы бронирования
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $start_date = $_POST['start_date'];
     $end_date = $_POST['end_date'];
@@ -48,17 +47,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $days = (strtotime($end_date) - strtotime($start_date)) / (60 * 60 * 24);
         $total_price = $equipment['price_per_day'] * $days;
 
+        // Считаем количество уже забронированных единиц на указанный период
         $stmt = $pdo->prepare("
-            SELECT * FROM bookings 
+            SELECT COUNT(*) as booked_count
+            FROM bookings 
             WHERE equipment_id = ? 
-              AND (start_date <= ? AND end_date >= ?)
+              AND status != 'Отменено'
+              AND (start_date <= :end_date AND end_date >= :start_date)
         ");
-        $stmt->execute([$equipment_id, $end_date, $start_date]);
-        $existing_booking = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->execute([
+            'equipment_id' => $equipment_id,
+            'start_date' => $start_date,
+            'end_date' => $end_date
+        ]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $booked_count = $result['booked_count'] ?? 0;
 
-        if ($existing_booking) {
-            $error = "Оборудование уже забронировано на выбранные даты.";
+        $available_units = $equipment['availability'] - $booked_count;
+
+        if ($available_units <= 0) {
+            $error = "Оборудование полностью забронировано на выбранные даты.";
         } else {
+            // Вставляем новое бронирование
             $stmt = $pdo->prepare("
                 INSERT INTO bookings (user_id, equipment_id, start_date, end_date, status, total_price) 
                 VALUES (?, ?, ?, ?, 'В обработке', ?)
@@ -88,7 +98,7 @@ include('templates/header.php');
             <p><strong>Категория:</strong> <?php echo htmlspecialchars($equipment['category_name'] ?? 'Без категории'); ?></p>
             <p><strong>Описание:</strong> <?php echo nl2br(htmlspecialchars($equipment['description'])); ?></p>
             <p><strong>Цена за день:</strong> <?php echo htmlspecialchars($equipment['price_per_day']); ?> руб.</p>
-            <p><strong>Доступность:</strong> <?php echo $equipment['availability'] > 0 ? 'В наличии' : 'Нет в наличии'; ?></p>
+            <p><strong>Всего в наличии:</strong> <?php echo (int)$equipment['availability']; ?></p>
         </div>
     </div>
 
