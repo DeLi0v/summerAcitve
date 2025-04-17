@@ -1,129 +1,107 @@
 .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 main h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 main h2 {
-    font-size: 1.4rem;
-    margin-top: 40px;
-    margin-bottom: 15px;
-    text-align: center;
+  font-size: 1.4rem;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .equipment-details-card {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    background-color: #fff;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  align-items: stretch;
 }
 
 .equipment-details-card img {
-    width: 320px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-    flex-shrink: 0;
+  width: 320px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
 }
 
 .equipment-details-card div {
-    flex: 1;
-    min-width: 250px;
+  flex: 1;
+  min-width: 250px;
 }
 
 .booking-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 0 auto 40px;
-    max-width: 400px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0 auto 40px;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .booking-form label {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .booking-form input[type="date"] {
-    padding: 8px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
 .booking-form .btn {
-    background-color: #0077cc;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .booking-form .btn:hover {
-    background-color: #005fa3;
+  background-color: #005fa3;
 }
 
 .error-message {
-    margin: 20px auto;
-    max-width: 400px;
-    color: #b30000;
-    background-color: #ffe6e6;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ffcccc;
-    text-align: center;
+  margin: 20px auto;
+  max-width: 400px;
+  color: #b30000;
+  background-color: #ffe6e6;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ffcccc;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
-    .equipment-details-card {
-        flex-direction: column;
-        align-items: center;
-    }
+  .equipment-details-card {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .equipment-details-card img {
-        width: 100%;
-        height: auto;
-    }
+  .equipment-details-card img {
+    width: 100%;
+    height: auto;
+  }
 
-    .booking-form {
-        width: 100%;
-    }
+  .booking-form {
+    width: 100%;
+  }
 }
-
-
-.back-button {
-    /* display: inline-block;
-    padding: 8px 16px;
-    color: #333;
-    text-decoration: none; */
-  
-    position: absolute;
-    left: 0;
-    padding: 8px 16px;
-    color: #333;
-    text-decoration: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .back-button:hover {
-    text-decoration: none;
-    background-color: transparent;
-  }
