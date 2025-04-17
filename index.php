@@ -38,19 +38,20 @@ $equipments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <h1>Каталог оборудования</h1>
 
 <!-- Форма фильтра -->
-<form method="GET" class="filter-form">
-    <label for="category">Категория:</label>
-    <select name="category" id="category">
-        <option value="">Все категории</option>
-        <?php foreach ($categories as $cat): ?>
-            <option value="<?= $cat['id'] ?>" <?= $selected_category == $cat['id'] ? 'selected' : '' ?>>
-                <?= htmlspecialchars($cat['name']) ?>
-            </option>
-        <?php endforeach; ?>
-    </select>
-
-    <button type="submit">Применить</button>
-</form>
+<div class="filter-wrapper">
+    <form method="GET" class="filter-form">
+        <label for="category">Категория:</label>
+        <select name="category" id="category">
+            <option value="">Все категории</option>
+            <?php foreach ($categories as $cat): ?>
+                <option value="<?= $cat['id'] ?>" <?= $selected_category == $cat['id'] ? 'selected' : '' ?>>
+                    <?= htmlspecialchars($cat['name']) ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <button type="submit">Применить</button>
+    </form>
+</div>
 
 <?php if (count($equipments) > 0): ?>
     <div class="equipment-container">
