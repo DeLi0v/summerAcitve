@@ -105,32 +105,3 @@ main h2 {
         width: 100%;
     }
 }
-
-.equipment-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.filter-form {
-    margin-bottom: 20px;
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.filter-form select,
-.filter-form input[type="checkbox"] {
-    padding: 5px;
-    font-size: 16px;
-}
-
-.filter-form button {
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
