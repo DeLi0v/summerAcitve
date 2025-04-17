@@ -57,10 +57,12 @@ $equipments = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach ($equipments as $equipment): ?>
             <div class="equipment-card">
                 <?php if (!empty($equipment['image_path'])): ?>
-                    <img src="<?php echo htmlspecialchars($equipment['image_path']); ?>" alt="<?php echo htmlspecialchars($equipment['name']); ?>">
+                    <img src="<?php echo htmlspecialchars($equipment['image_path']); ?>"
+                        alt="<?php echo htmlspecialchars($equipment['name']); ?>">
                 <?php endif; ?>
                 <h3><?php echo htmlspecialchars($equipment['name']); ?></h3>
-                <p><strong>Категория:</strong> <?php echo htmlspecialchars($equipment['category_name'] ?? 'Без категории'); ?></p>
+                <p><strong>Категория:</strong> <?php echo htmlspecialchars($equipment['category_name'] ?? 'Без категории'); ?>
+                </p>
                 <p><strong>Цена за день:</strong> <?php echo htmlspecialchars($equipment['price_per_day']); ?> руб.</p>
                 <p><?php echo nl2br(htmlspecialchars($equipment['description'])); ?></p>
                 <a href="booking.php?equipment_id=<?php echo $equipment['id']; ?>" class="btn">Забронировать</a>
