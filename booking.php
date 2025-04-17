@@ -51,15 +51,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare("
             SELECT COUNT(*) as booked_count
             FROM bookings 
-            WHERE equipment_id = ? 
-              AND status != 'Отменено'
-              AND (start_date <= :end_date AND end_date >= :start_date)
+            WHERE equipment_id = :equipment_id 
+            AND status != 'Отменено'
+            AND (start_date <= :end_date AND end_date >= :start_date)
         ");
         $stmt->execute([
             'equipment_id' => $equipment_id,
             'start_date' => $start_date,
             'end_date' => $end_date
         ]);
+
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         $booked_count = $result['booked_count'] ?? 0;
 
@@ -91,14 +92,15 @@ include('templates/header.php');
     <div class="equipment-details-card">
         <?php if (!empty($equipment['image_path'])): ?>
             <img src="<?php echo '/' . ltrim($equipment['image_path'], '/'); ?>"
-                 alt="<?php echo htmlspecialchars($equipment['name']); ?>">
+                alt="<?php echo htmlspecialchars($equipment['name']); ?>">
         <?php endif; ?>
 
         <div>
-            <p><strong>Категория:</strong> <?php echo htmlspecialchars($equipment['category_name'] ?? 'Без категории'); ?></p>
+            <p><strong>Категория:</strong>
+                <?php echo htmlspecialchars($equipment['category_name'] ?? 'Без категории'); ?></p>
             <p><strong>Описание:</strong> <?php echo nl2br(htmlspecialchars($equipment['description'])); ?></p>
             <p><strong>Цена за день:</strong> <?php echo htmlspecialchars($equipment['price_per_day']); ?> руб.</p>
-            <p><strong>Всего в наличии:</strong> <?php echo (int)$equipment['availability']; ?></p>
+            <p><strong>Всего в наличии:</strong> <?php echo (int) $equipment['availability']; ?></p>
         </div>
     </div>
 
