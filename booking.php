@@ -2,7 +2,6 @@
 session_start();
 include('assets/db.php');
 
-// Проверка авторизации
 if (!isset($_SESSION['user_id'])) {
     header('Location: /login.php');
     exit;
@@ -13,22 +12,47 @@ echo '<link rel="stylesheet" href="/styles/booking.css">';
 $error = '';
 $success = '';
 
-// Получаем список всего оборудования с категориями
-$stmt = $pdo->query("
+// Получаем все категории
+$category_stmt = $pdo->query("SELECT id, name FROM categories");
+$categories = $category_stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Обработка фильтров
+$selected_category = $_GET['category'] ?? '';
+$only_available = isset($_GET['available']) && $_GET['available'] === '1';
+
+$conditions = [];
+$params = [];
+
+$sql = "
     SELECT e.*, c.name AS category_name 
     FROM equipment e 
     LEFT JOIN categories c ON e.category_id = c.id
-");
-$equipment_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+";
 
-// Обработка отправки формы
+if ($selected_category !== '') {
+    $conditions[] = "e.category_id = :category_id";
+    $params['category_id'] = $selected_category;
+}
+
+if ($only_available) {
+    $conditions[] = "e.availability > 0";
+}
+
+if ($conditions) {
+    $sql .= " WHERE " . implode(' AND ', $conditions);
+}
+
+$equipment_stmt = $pdo->prepare($sql);
+$equipment_stmt->execute($params);
+$equipment_list = $equipment_stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Обработка бронирования
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $equipment_id = $_POST['equipment_id'];
     $start_date = $_POST['start_date'];
     $end_date = $_POST['end_date'];
     $user_id = $_SESSION['user_id'];
 
-    // Получаем информацию об этом оборудовании
     $stmt = $pdo->prepare("SELECT * FROM equipment WHERE id = ?");
     $stmt->execute([$equipment_id]);
     $equipment = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -41,7 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $days = (strtotime($end_date) - strtotime($start_date)) / (60 * 60 * 24);
         $total_price = $equipment['price_per_day'] * $days;
 
-        // Проверка доступности
         $stmt = $pdo->prepare("
             SELECT COUNT(*) as booked_count
             FROM bookings 
@@ -62,7 +85,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($available_units <= 0) {
             $error = "Оборудование полностью забронировано на выбранные даты.";
         } else {
-            // Вставляем новое бронирование
             $stmt = $pdo->prepare("
                 INSERT INTO bookings (user_id, equipment_id, start_date, end_date, status, total_price) 
                 VALUES (?, ?, ?, ?, 'В обработке', ?)
@@ -81,6 +103,26 @@ include('templates/header.php');
 
 <main class="container">
     <h1>Бронирование оборудования</h1>
+
+    <!-- Форма фильтра -->
+    <form method="GET" class="filter-form">
+        <label for="category">Категория:</label>
+        <select name="category" id="category">
+            <option value="">Все категории</option>
+            <?php foreach ($categories as $cat): ?>
+                <option value="<?= $cat['id'] ?>" <?= $selected_category == $cat['id'] ? 'selected' : '' ?>>
+                    <?= htmlspecialchars($cat['name']) ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+
+        <label>
+            <input type="checkbox" name="available" value="1" <?= $only_available ? 'checked' : '' ?>>
+            Только в наличии
+        </label>
+
+        <button type="submit">Применить</button>
+    </form>
 
     <?php if (!empty($error)): ?>
         <div class="error-message"><?php echo $error; ?></div>
