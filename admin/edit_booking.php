@@ -74,6 +74,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php');
             <option value="Подтверждено" <?php echo $booking['status'] == 'Подтверждено' ? 'selected' : ''; ?>>Подтверждено</option>
             <option value="Выдано" <?php echo $booking['status'] == 'Выдано' ? 'selected' : ''; ?>>Выдано</option>
             <option value="Отменено" <?php echo $booking['status'] == 'Отменено' ? 'selected' : ''; ?>>Отменено</option>
+            <option value="Завершено" <?php echo $booking['status'] == 'Завершено' ? 'selected' : ''; ?>>Завершено</option>
         </select>
 
         <input type="submit" value="Сохранить изменения">
