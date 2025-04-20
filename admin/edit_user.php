@@ -40,7 +40,7 @@ if (!$user) {
         $role = $_POST['role'];
 
         // Проверка роли
-        if ($role !== 'user' && $role !== 'admin') {
+        if ($role !== 'client' && $role !== 'admin') {
             $message = "Некорректное значение роли.";
             $message_type = "error";  // Тип сообщения: ошибка
         }
@@ -53,7 +53,6 @@ if (!$user) {
 
         // Обновление данных пользователя
         else {
-            var_dump($role);
             $stmt = $pdo->prepare("UPDATE users SET name = ?, email = ?, phone = ?, role = ? WHERE id = ?");
             $stmt->execute([$name, $email, $phone, $role, $user_id]);
 
@@ -94,7 +93,7 @@ if (!$user) {
 
         <label>Роль</label>
         <select name="role" required>
-            <option value="user" <?= $user['role'] === 'user' ? 'selected' : '' ?>>Пользователь</option>
+            <option value="client" <?= $user['role'] === 'client' ? 'selected' : '' ?>>Пользователь</option>
             <option value="admin" <?= $user['role'] === 'admin' ? 'selected' : '' ?>>Администратор</option>
         </select>
 
