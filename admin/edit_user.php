@@ -12,7 +12,7 @@ echo '<link rel="stylesheet" href="/styles/admin.css">';
 
 // Получение ID пользователя из URL
 if (!isset($_GET['id'])) {
-    header('Location: admin_users.php');
+    header('Location: /admin/users.php');
     exit;
 }
 
