@@ -29,10 +29,10 @@ if (!$user) {
 } else {
     // Обработка формы
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $name  = $_POST['name'];
+        $name = $_POST['name'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
-        $role  = $_POST['role'];
+        $role = $_POST['role'];
 
         // Проверка роли
         if ($role !== 'user' && $role !== 'admin') {
@@ -50,11 +50,15 @@ if (!$user) {
         else {
             $stmt = $pdo->prepare("UPDATE users SET name = ?, email = ?, phone = ?, role = ? WHERE id = ?");
             $stmt->execute([$name, $email, $phone, $role, $user_id]);
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-            
+
+            // Обновляем $user локально (не обязательно делать SELECT)
+            $user['name'] = $name;
+            $user['email'] = $email;
+            $user['phone'] = $phone;
+            $user['role'] = $role;
+
             $message = "Данные пользователя успешно обновлены.";
-            $message_type = "success";  // Тип сообщения: успех
-                
+            $message_type = "success";
         }
     }
 }
