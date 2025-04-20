@@ -53,6 +53,7 @@ if (!$user) {
 
         // Обновление данных пользователя
         else {
+            var_dump($role);
             $stmt = $pdo->prepare("UPDATE users SET name = ?, email = ?, phone = ?, role = ? WHERE id = ?");
             $stmt->execute([$name, $email, $phone, $role, $user_id]);
 
