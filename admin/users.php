@@ -56,7 +56,7 @@ unset($_SESSION['message'], $_SESSION['message_type']);
                         <td><?= htmlspecialchars($user['name']) ?></td>
                         <td><?= htmlspecialchars($user['email']) ?></td>
                         <td><?= htmlspecialchars($user['phone']) ?></td>
-                        <td><?= $user['role'] === 'user' ? 'Пользователь' : 'Администратор' ?></td>
+                        <td><?= $user['role'] === 'client' ? 'Пользователь' : 'Администратор' ?></td>
                         <td>
                             <a href="edit_user.php?id=<?= $user['id'] ?>">Редактировать</a> |
                             <a href="delete_user.php?id=<?= $user['id'] ?>"
