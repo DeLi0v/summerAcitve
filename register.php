@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="email" id="email" name="email" required>
 
         <label for="phone">Телефон:</label>
-        <input type="tel" id="phone" name="phone" required>
+        <input type="number" id="phone" name="phone" required>
 
         <label for="password">Пароль:</label>
         <input type="password" id="password" name="password" required>
