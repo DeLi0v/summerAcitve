@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="email" id="email" name="email" required>
 
         <label for="phone">Телефон:</label>
-        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+        <input type="tel" id="phone" name="phone" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" placeholder="+7 (999) 999-99-99" required>
 
         <label for="password">Пароль:</label>
         <input type="password" id="password" name="password" required>
