@@ -66,7 +66,9 @@ $equipments = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </p>
                 <p><strong>Цена за день:</strong> <?php echo htmlspecialchars($equipment['price_per_day']); ?> руб.</p>
                 <p><?php echo nl2br(htmlspecialchars($equipment['description'])); ?></p>
-                <a href="booking.php?equipment_id=<?php echo $equipment['id']; ?>" class="btn">Забронировать</a>
+                <?php if (isset($_SESSION['user_id']) && $_SESSION['role'] != 'admin'):?>
+                    <a href="booking.php?equipment_id=<?php echo $equipment['id']; ?>" class="btn">Забронировать</a>
+                <?php ?>
             </div>
         <?php endforeach; ?>
     </div>

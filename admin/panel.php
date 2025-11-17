@@ -15,7 +15,7 @@ echo '<link rel="stylesheet" href="/styles/admin.css">';
 <main class="admin-panel">
     <div class="admin-header">
         <?php
-        $back_url = '/account/account.php';
+        $back_url = '/index.php';
         include($_SERVER['DOCUMENT_ROOT'] . '/templates/back_button.php');
         ?>
         <h1>Административная панель</h1>

@@ -16,7 +16,11 @@
             <ul>
                 <li><a href="/index.php">Каталог</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
-                    <li><a href="/account/account.php">Личный кабинет</a></li>
+                    <?php if ($_SESSION['role'] === 'admin'):?>
+                        <li><a href="/admin/panel.php">Личный кабинет</a></li>
+                    <?php else: ?>
+                        <li><a href="/account/account.php">Личный кабинет</a></li>
+                    <?php endif; ?>
                     <li><a href="/logout.php">Выход</a></li>
                 <?php else: ?>
                     <li><a href="/login.php">Вход</a></li>
