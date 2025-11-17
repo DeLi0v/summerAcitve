@@ -119,4 +119,5 @@ footer {
   height: 40px;
   vertical-align: middle;
   margin-right: 6px;
+  filter: brightness(0) invert(1);
 }
