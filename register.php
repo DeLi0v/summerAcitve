@@ -42,6 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
+
+<script>
+function isNumberKey(evt) {
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+  return !(charCode > 31 && (charCode < 48 || charCode > 57));
+}
+</script>
 <h1>Регистрация</h1>
 
 <div class="form-container">
@@ -63,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="email" id="email" name="email" required>
 
         <label for="phone">Телефон:</label>
-        <input type="tel" id="phone" name="phone" pattern="[0-9]*" required>
+        <input type="tel" id="phone" name="phone" onkeypress="return isNumberKey(event)" required>
 
         <label for="password">Пароль:</label>
         <input type="password" id="password" name="password" required>
