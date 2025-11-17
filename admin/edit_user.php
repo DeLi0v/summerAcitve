@@ -68,6 +68,12 @@ if (!$user) {
 <link rel="stylesheet" href="/styles/admin.css">
 
 <main>
+<script>
+function isNumberKey(evt) {
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+  return !(charCode > 31 && (charCode < 48 || charCode > 57));
+}
+</script>
     <h1 class="text-center">Редактировать пользователя</h1>
 
     <?php if (isset($message)): ?>
@@ -84,7 +90,7 @@ if (!$user) {
         <input type="email" name="email" value="<?= htmlspecialchars($user['email']) ?>" required>
 
         <label>Телефон</label>
-        <input type="text" name="phone" value="<?= htmlspecialchars($user['phone']) ?>" required>
+        <input type="text" name="phone" value="<?= htmlspecialchars($user['phone']) ?>" onkeypress="return isNumberKey(event)" required>
 
         <label>Роль</label>
         <select name="role" required>

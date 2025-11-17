@@ -39,7 +39,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'); ?>
-
+<script>
+function isNumberKey(evt) {
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+  return !(charCode > 31 && (charCode < 48 || charCode > 57));
+}
+</script>
 <main>
     <div class="title-back-header">
         <?php
@@ -60,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 required>
 
             <label for="phone">Телефон</label>
-            <input type="text" id="phone" name="phone" value="<?php echo htmlspecialchars($user['phone']); ?>" required>
+            <input type="text" id="phone" name="phone" value="<?php echo htmlspecialchars($user['phone']); ?>" onkeypress="return isNumberKey(event)" required>
 
             <label for="password">Новый пароль:</label>
             <input type="password" name="password" id="password">
