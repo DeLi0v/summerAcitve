@@ -21,7 +21,7 @@
                     <?php else: ?>
                         <li><a href="/account/account.php"><img src="/assets/account.png" alt="Личный кабинет" class="menu-icon">Личный кабинет</a></li>
                     <?php endif; ?>
-                    <li><a href="/logout.php"><img src="/assets/logout.png" alt="Выход" class="menu-icon">Выход</a></li>
+                    <li style="margin-left: 25px;"><a href="/logout.php"><img src="/assets/logout.png" alt="Выход" class="menu-icon">Выход</a></li>
                 <?php else: ?>
                     <li><a href="/login.php"><img src="/assets/enter.png" alt="Вход" class="menu-icon">Вход</a></li>
                     <!-- <li><a href="/register.php"><img src="/assets/catalogue.png" alt="Каталог" class="menu-icon">Регистрация</a></li> -->
