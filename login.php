@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             $_SESSION['is_admin'] = false;
         }
-        if ($user['role'] == 'admin'): {
+        if ($user['role'] == 'admin') {
             header('Location: admin/panel.php');
         } else {
             header('Location: account/account.php');
