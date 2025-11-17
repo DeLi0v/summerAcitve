@@ -68,7 +68,7 @@ $equipments = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <p><?php echo nl2br(htmlspecialchars($equipment['description'])); ?></p>
                 <?php if (isset($_SESSION['user_id']) && $_SESSION['role'] != 'admin'):?>
                     <a href="booking.php?equipment_id=<?php echo $equipment['id']; ?>" class="btn">Забронировать</a>
-                <?php ?>
+                <?php endif; ?>
             </div>
         <?php endforeach; ?>
     </div>
