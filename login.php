@@ -24,11 +24,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             $_SESSION['is_admin'] = false;
         }
-        if ($user['role'] == 'admin') {
+
+        if ($_SESSION['is_admin'] == true) {
             header('Location: admin/panel.php');
         } else {
             header('Location: account/account.php');
         }
+
         exit;
     } else {
         $error = 'Неверный email или пароль.';
