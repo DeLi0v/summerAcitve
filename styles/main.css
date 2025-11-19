@@ -175,6 +175,7 @@ footer {
 /* Контейнер dropdown */
 .dropdown {
   position: relative;
+  display: inline-block;  /* <-- важно */
 }
 
 /* Скрытое меню */
@@ -194,7 +195,7 @@ footer {
 
 /* Показать при наведении */
 .dropdown:hover .dropdown-menu {
-  display: block;
+  display: block !important;
 }
 
 /* Элементы меню */
