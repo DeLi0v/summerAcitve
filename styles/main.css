@@ -88,7 +88,7 @@ header {
   background-color: rgba(255,255,255,0.12);
 }
 
-.nav-right > li > a {
+/* .nav-right > li > a {
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -103,7 +103,7 @@ header {
 .nav-right > li > a:hover {
   color: #eef7ff;
   background-color: rgba(255,255,255,0.12);
-}
+} */
 
 /* Контейнер dropdown */
 .nav-center .dropdown {
