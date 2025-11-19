@@ -189,7 +189,6 @@ footer {
   padding: 10px 0;
   min-width: 180px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-
   display: none; /* по умолчанию скрыто */
   z-index: 999;
   flex-direction: column;
@@ -201,7 +200,7 @@ footer {
 }
 
 .dropdown:hover .dropdown-menu {
-  display: block !important;
+  display: flex;
 }
 
 /* Элементы меню */
@@ -210,7 +209,7 @@ footer {
   align-items: center;
   justify-content: center; /* центрируем текст и иконки */
   padding: 10px 14px;
-  color: #333 !important;
+  color: #333;
   text-decoration: none;
   font-size: 16px;
   white-space: nowrap;
