@@ -181,6 +181,7 @@ footer {
 /* Скрытое меню */
 .dropdown-menu {
   position: absolute;
+  text-align: center;
   top: 100%;          /* под кнопкой */
   left: 0;
   background: #fff;
@@ -200,6 +201,7 @@ footer {
 
 .dropdown-menu li a {
   color: #333 !important;
+  justify-content: center;
 }
 
 .dropdown:hover .dropdown-menu {
