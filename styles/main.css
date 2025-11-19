@@ -194,11 +194,6 @@ footer {
   flex-direction: column;
 }
 
-.nav-center ul .dropdown-menu {
-  display: none !important;
-  flex-direction: column !important;
-}
-
 .dropdown:hover .dropdown-menu {
   display: flex;
 }
