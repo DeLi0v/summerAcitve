@@ -13,15 +13,12 @@ body {
   padding-bottom: 60px;
 }
 
-/* Header */
 header {
-    background-color: #0077cc;
-    color: white;
-    padding: 0 30px; /* убираем разные паддинги сверху и снизу */
-    height: 70px;    /* фиксируем единый размер хедера */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #0077cc;
+  color: white;
+  height: 70px;
+  display: flex;
+  align-items: center;
 }
 
 .logo a {
@@ -31,90 +28,49 @@ header {
   font-weight: bold;
 }
 
-/* nav ul {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: color 0.2s ease-in-out;
-}
-
-nav ul li a:hover {
-  color: #ffd700;
-} */
-
 .nav-wrapper {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;  /* ← ВАЖНО: центрирование всех элементов */
-    height: 100%;         /* ← чтобы центрировать по высоте */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
+/* Фикс выравнивания — теперь центр реально центр */
 .nav-left,
 .nav-center,
 .nav-right {
+  flex: 1;                 /* ← даёт равные зоны */
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  height: 70px;
-  padding: 0 10px;
-
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  white-space: nowrap;
 }
 
-.nav-left a {
-  display: flex;
-  align-items: center;
-  height: 70px;
-
-  color: white;
-  font-size: 1.4em;
-  font-weight: bold;
-  text-decoration: none;
+.nav-left {
+  justify-content: flex-start;
 }
 
 .nav-center {
-    justify-content: center;
+  justify-content: center; /* ← кнопки станут строго по центру */
 }
 
 .nav-right {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .nav-center ul,
-.nav-right ul,
-.nav-left ul {
+.nav-right ul {
   display: flex;
-  align-items: center;
   gap: 20px;
-  list-style: none; /* ← убираем точки */
-  margin: 0;
-  padding: 0;
+  list-style: none;
 }
 
 .nav-center ul li a,
-.nav-right ul li a,
-.nav-left ul li a {
+.nav-right ul li a {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 70px;
-  line-height: 70px;
-  text-decoration: none;
+  align-items: center;     /* ← ВЕРТИКАЛЬНАЯ ЦЕНТРОВКА */
   color: white;
-  white-space: nowrap;
-
-  font-size: 1.1em;
+  font-size: 1.1rem;
+  text-decoration: none;
+  height: 70px;
 }
 
 
