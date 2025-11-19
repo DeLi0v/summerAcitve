@@ -193,7 +193,15 @@ footer {
   z-index: 999;
 }
 
-/* Показать при наведении */
+.nav-center ul .dropdown-menu {
+  display: none !important;
+  flex-direction: column !important;
+}
+
+.dropdown-menu li a {
+  color: #333 !important;
+}
+
 .dropdown:hover .dropdown-menu {
   display: block !important;
 }

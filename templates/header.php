@@ -35,16 +35,10 @@
                         <?php if (isset($_SESSION['user_id'])): ?>
 
                             <li class="dropdown">
-                                <a href="/account/account.php" class="dropdown-toggle">
-                                    <img src="/assets/account.png" class="menu-icon">Личный кабинет
-                                </a>
+                                <a href="/account/account.php" class="dropdown-toggle"><img src="/assets/account.png" class="menu-icon">Личный кабинет</a>
 
                                 <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="/logout.php">
-                                            <img src="/assets/logout.png" class="menu-icon">Выход
-                                        </a>
-                                    </li>
+                                    <li><a href="/logout.php"><img src="/assets/logout.png" class="menu-icon">Выход</a></li>
                                 </ul>
                             </li>
 
