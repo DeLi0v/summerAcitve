@@ -43,8 +43,9 @@
                             </li>
 
                         <?php else: ?>
-
-                            <li><a href="/login.php"><img src="/assets/enter.png" class="menu-icon">Вход</a></li>
+                            <ul>
+                                <li><a href="/login.php"><img src="/assets/enter.png" class="menu-icon">Вход</a></li>
+                            </ul>
 
                         <?php endif; ?>
 
