@@ -141,13 +141,13 @@ header {
   filter: brightness(0);
 }
 
-.nav-right .dropdown {
+.nav-right {
   position: relative;
   display: inline-flex; /* как в центре */
   align-items: center;
 }
 
-.nav-right .dropdown > a {
+.nav-right {
   display: flex;
   align-items: center;
   height: 70px;
