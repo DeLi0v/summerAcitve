@@ -89,13 +89,13 @@ header {
 }
 
 /* Контейнер dropdown */
-.dropdown {
+.nav-center .dropdown {
   position: relative;
   display: inline-block;
 }
 
 /* Скрытое меню по умолчанию */
-.dropdown-menu {
+.nav-center .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
@@ -111,12 +111,12 @@ header {
 }
 
 /* Показать меню при наведении */
-.dropdown:hover .dropdown-menu {
+.nav-center .dropdown:hover .dropdown-menu {
   display: flex;
 }
 
 /* Элементы выпадающего меню */
-.dropdown-menu li a {
+.nav-center .dropdown-menu li a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,13 +128,13 @@ header {
   transition: 0.2s ease;
 }
 
-.dropdown-menu li a:hover {
+.nav-center .dropdown-menu li a:hover {
   background-color: #7abaff; /* светло-голубой фон */
   color: #0077cc; /* синий текст */
 }
 
 /* Иконки в меню */
-.dropdown-menu .menu-icon {
+.nav-center .dropdown-menu .menu-icon {
   width: 20px;
   height: 20px;
   margin-right: 10px;
