@@ -210,14 +210,14 @@ footer {
   align-items: center;
   justify-content: center; /* центрируем текст и иконки */
   padding: 10px 14px;
-  color: #333;
+  color: #333 !important;
   text-decoration: none;
   font-size: 16px;
   white-space: nowrap;
 }
 
 .dropdown-menu li a:hover {
-  background: #e6f2ff;                /* светло-голубой фон */
+  background: #7abaff;                /* светло-голубой фон */
   color: #0077cc;                     /* синий текст */
 }
 
