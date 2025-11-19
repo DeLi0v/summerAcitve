@@ -39,33 +39,30 @@ header {
   padding: 10px 0;
   min-width: 180px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  display: none; /* скрыто по умолчанию */
+  display: none;
   z-index: 999;
   flex-direction: column;
 }
 
-/* Показываем меню при наведении на родителя */
 .dropdown:hover .dropdown-menu {
   display: flex;
 }
 
-/* Элементы меню */
 .dropdown-menu li a {
   display: flex;
   align-items: center;
-  justify-content: center; /* центрируем текст и иконки */
+  justify-content: center;
   padding: 10px 14px;
-  color: #333;             /* черный текст по умолчанию */
+  color: #333;
   text-decoration: none;
   font-size: 16px;
   white-space: nowrap;
   transition: 0.2s ease;
 }
 
-/* Hover эффект для элементов выпадающего меню */
 .dropdown-menu li a:hover {
-  background-color: #7abaff; /* яркий светло-голубой фон */
-  color: #0077cc;            /* синий текст */
+  background-color: #7abaff;
+  color: #0077cc;
 }
 
 /* Иконки в меню */
