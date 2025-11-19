@@ -14,7 +14,7 @@
 <body>
     <header>
         <nav class="nav-wrapper">
-            <div class="nav-left">
+            <div class="nav-left logo">
                 <a href="/index.php">Аренда оборудования</a>
             </div>
             <div class="nav-center">
