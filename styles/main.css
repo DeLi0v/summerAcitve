@@ -100,13 +100,6 @@ header {
   color: white;
   font-size: 1.4em;
   font-weight: bold;
-}
-
-.logo a {
-  text-decoration: none;
-  color: white;
-  font-size: 1.4em;
-  font-weight: bold;
   transition: 0.2s ease;
 }
 
@@ -173,8 +166,6 @@ h2,
 h3,
 p {
   margin: 20px 20px;
-  /* width: 90%; */
-  /* max-width: 1000px; */
 }
 
 /* Стили для ссылок */
