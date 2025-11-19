@@ -175,23 +175,24 @@ footer {
 /* Контейнер dropdown */
 .dropdown {
   position: relative;
-  display: inline-block;  /* <-- важно */
+  display: inline-block;
 }
 
 /* Скрытое меню */
 .dropdown-menu {
   position: absolute;
-  text-align: center;
-  top: 100%;          /* под кнопкой */
+  top: 100%;
   left: 0;
+  text-align: center;
   background: #fff;
   border-radius: 8px;
   padding: 10px 0;
   min-width: 180px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 
-  display: none;      /* скрыть по умолчанию */
+  display: none; /* по умолчанию скрыто */
   z-index: 999;
+  flex-direction: column;
 }
 
 .nav-center ul .dropdown-menu {
@@ -207,9 +208,9 @@ footer {
 .dropdown-menu li a {
   display: flex;
   align-items: center;
+  justify-content: center; /* центрируем текст и иконки */
   padding: 10px 14px;
-  color: #333 !important;
-  justify-content: center;
+  color: #333;
   text-decoration: none;
   font-size: 16px;
   white-space: nowrap;
