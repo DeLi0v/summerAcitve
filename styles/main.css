@@ -88,6 +88,22 @@ header {
   background-color: rgba(255,255,255,0.12);
 }
 
+.nav-right > li > a {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  padding: 0 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.12rem;
+  transition: 0.2s ease;
+}
+
+.nav-right > li > a:hover {
+  color: #eef7ff;
+  background-color: rgba(255,255,255,0.12);
+}
+
 /* Контейнер dropdown */
 .nav-center .dropdown {
   position: relative;
@@ -139,23 +155,6 @@ header {
   height: 20px;
   margin-right: 10px;
   filter: brightness(0);
-}
-
-.nav-right {
-  position: relative;
-  display: inline-flex; /* как в центре */
-  align-items: center;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  height: 70px;
-  padding: 0 8px;
-  color: white;
-  text-decoration: none;
-  font-size: 1.12rem;
-  transition: 0.2s ease;
 }
 
 /* Основной контент */
