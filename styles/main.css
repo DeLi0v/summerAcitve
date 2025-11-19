@@ -22,6 +22,60 @@ header {
   padding: 0 30px;
 }
 
+/* Контейнер dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Скрытое меню по умолчанию */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 0;
+  min-width: 180px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  display: none; /* скрыто по умолчанию */
+  z-index: 999;
+  flex-direction: column;
+}
+
+/* Показываем при наведении на родителя */
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* Элементы меню */
+.dropdown-menu li a {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* центрируем текст и иконки */
+  padding: 10px 14px;
+  color: #333;             /* черный текст по умолчанию */
+  text-decoration: none;
+  font-size: 16px;
+  white-space: nowrap;
+  transition: 0.2s ease;    /* плавный переход для hover */
+}
+
+/* Hover эффект для элементов выпадающего меню */
+.dropdown-menu li a:hover {
+  background-color: #7abaff; /* яркий светло-голубой фон */
+  color: #0077cc;            /* синий текст */
+}
+
+/* Иконки в меню */
+.dropdown-menu .menu-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  filter: brightness(0);
+}
+
 .logo a {
   text-decoration: none;
   color: white;
@@ -50,7 +104,8 @@ header {
 }
 
 .nav-left,
-.nav-center {
+.nav-center,
+.nav-right {
   display: flex;
   align-items: center;
 }
@@ -91,7 +146,6 @@ header {
   color: #eef7ff; 
   background-color: rgba(255,255,255,0.12); /* мягкая подсветка */
 }
-
 
 /* Основной контент */
 main,
@@ -163,65 +217,11 @@ footer {
 }
 
 .menu-icon {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   margin-right: 8px;
   object-fit: contain;
   display: inline-block;
   filter: brightness(0) invert(1);
   transition: 0.2s ease;
-}
-
-/* Контейнер dropdown */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Скрытое меню по умолчанию */
-.dropdown-menu {
-  position: absolute;
-  top: 100%;          /* под кнопкой */
-  left: 0;
-  text-align: center;
-  background: #fff;    /* белый фон */
-  border-radius: 8px;
-  padding: 10px 0;
-  min-width: 180px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  display: none;       /* скрыто по умолчанию */
-  z-index: 999;
-  flex-direction: column;
-}
-
-/* Показываем при наведении на родителя */
-.dropdown:hover .dropdown-menu {
-  display: flex;
-}
-
-/* Ссылки внутри меню */
-.dropdown-menu li a {
-  display: flex;
-  align-items: center;
-  justify-content: center;  /* центрируем текст и иконки */
-  padding: 10px 14px;
-  color: #333;              /* черный текст по умолчанию */
-  text-decoration: none;
-  font-size: 16px;
-  white-space: nowrap;
-  transition: 0.2s ease;     /* плавное изменение цвета и фона */
-}
-
-/* Hover для ссылок */
-.dropdown-menu li a:hover {
-  background-color: #7abaff; /* яркий светло-голубой фон */
-  color: #0077cc;            /* синий текст */
-}
-
-/* Иконки в меню */
-.dropdown-menu .menu-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  filter: brightness(0);
 }
