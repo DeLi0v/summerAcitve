@@ -3,4 +3,4 @@
 $back_url = $back_url ?? '/index.php';
 ?>
 
-<a href="<?= htmlspecialchars($back_url) ?>" class="back-button">← Назад</a>
+<!-- <a href="<?= htmlspecialchars($back_url) ?>" class="back-button">← Назад</a> -->
