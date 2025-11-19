@@ -43,9 +43,8 @@
                             </li>
 
                         <?php else: ?>
-                            <ul>
-                                <li><a href="/login.php"><img src="/assets/enter.png" class="menu-icon">Вход</a></li>
-                            </ul>
+
+                            <li><a href="/login.php"><img src="/assets/enter.png" class="menu-icon">Вход</a></li>
 
                         <?php endif; ?>
 
@@ -54,7 +53,9 @@
             </div>
             <div class="nav-right">
                 <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
-                    <li><a href="/logout.php">Выход</a></li>
+                    <ul>
+                        <li><a href="/logout.php">Выход</a></li>
+                    </ul>
                 <?php endif; ?>
             </div>
         </nav>
