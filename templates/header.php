@@ -26,7 +26,7 @@
                         <li><a href="/admin/equipment.php">Оборудование</a></li>
                         <li><a href="/admin/bookings.php">Бронирования</a></li>
                         <li><a href="/admin/categories.php">Категории оборудования</a></li>
-                        <li><a href="/logout.php">Выход</a></li>
+
 
                     <?php else: ?>
 
@@ -50,6 +50,11 @@
 
                     <?php endif; ?>
                 </ul>
+            </div>
+            <div class="nav-right">
+                <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+                    <li><a href="/logout.php">Выход</a></li>
+                <?php endif; ?>
             </div>
         </nav>
     </header>
