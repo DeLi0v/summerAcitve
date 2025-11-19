@@ -89,6 +89,7 @@ header {
 }
 
 .nav-right > li > a {
+  text-decoration: none;
   display: flex;
   align-items: center;
   height: 70px;
