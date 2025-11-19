@@ -141,6 +141,23 @@ header {
   filter: brightness(0);
 }
 
+.nav-right .dropdown {
+  position: relative;
+  display: inline-flex; /* как в центре */
+  align-items: center;
+}
+
+.nav-right .dropdown > a {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  padding: 0 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.12rem;
+  transition: 0.2s ease;
+}
+
 /* Основной контент */
 main,
 h1,
