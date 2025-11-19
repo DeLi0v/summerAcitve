@@ -44,7 +44,7 @@ header {
   flex-direction: column;
 }
 
-/* Показать меню при наведении на родителя */
+/* Показываем меню при наведении на родителя */
 .dropdown:hover .dropdown-menu {
   display: flex;
 }
@@ -74,6 +74,25 @@ header {
   height: 20px;
   margin-right: 10px;
   filter: brightness(0);
+}
+
+/* Верхнее меню (ссылки) */
+.nav-center ul li a,
+.nav-right ul li a {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  padding: 0 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.12rem;
+  transition: 0.2s ease;
+}
+
+.nav-center ul li a:hover,
+.nav-right ul li a:hover {
+  color: #eef7ff; 
+  background-color: rgba(255,255,255,0.12);
 }
 
 .logo a {
