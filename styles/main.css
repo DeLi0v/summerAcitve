@@ -81,10 +81,10 @@ footer {
 }
 
 .back-button {
-  /* display: inline-block;
-  padding: 8px 16px;
-  color: #333;
-  text-decoration: none; */
+  position: fixed;        /* фиксированное положение */
+  top: 20px;              /* одинаковый отступ сверху */
+  left: 20px;             /* одинаковый слева */
+  z-index: 999;           /* поверх контента */
 
   position: absolute;
   left: 0;
