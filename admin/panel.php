@@ -20,34 +20,6 @@ echo '<link rel="stylesheet" href="/styles/admin.css">';
         ?>
         <h1>Административная панель</h1>
     </div>
-
-    <div class="admin-sections">
-        <a href="users.php">
-            <div class="admin-section">
-                <h2>Пользователи</h2>
-                <!-- Управление пользователями -->
-            </div>
-        </a>
-
-        <a href="equipment.php">
-            <div class="admin-section">
-                <h2>Оборудование</h2>
-                <!-- Управление оборудованием -->
-            </div>
-        </a>
-
-        <a href="bookings.php">
-            <div class="admin-section">
-                <h2>Бронирования</h2>
-                <!-- Просмотр бронирований -->
-            </div>
-        </a>
-        <a href="categories.php">
-            <div class="admin-section">
-                <h2>Категории оборудования</h2>
-            </div>
-        </a>
-    </div>
 </main>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php'); ?>
