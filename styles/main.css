@@ -31,7 +31,7 @@ header {
   font-weight: bold;
 }
 
-nav ul {
+/* nav ul {
   list-style: none;
   display: flex;
   gap: 15px;
@@ -46,7 +46,45 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #ffd700;
+} */
+
+.nav-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.nav-left {
+    width: 33%;
+}
+
+.nav-center {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-right {
+    width: 33%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-center ul,
+.nav-right ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-center ul li a,
+.nav-right ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
 
 /* Основной контент */
 main,
