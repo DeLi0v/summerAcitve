@@ -37,10 +37,9 @@ header {
   transition: 0.2s ease;
 }
 
-/* .logo a:hover {
-  color: #eef7ff;
-  text-shadow: 0 0 6px rgba(255,255,255,0.55);
-} */
+.logo a:hover {
+  color: #d9ecfd;
+}
 
 .nav-wrapper {
   display: grid;
