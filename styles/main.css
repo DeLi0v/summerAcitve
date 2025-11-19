@@ -15,13 +15,13 @@ body {
 
 /* Header */
 header {
-  background-color: #0077cc;
-  color: white;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #0077cc;
+    color: white;
+    padding: 0 30px; /* убираем разные паддинги сверху и снизу */
+    height: 70px;    /* фиксируем единый размер хедера */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo a {
@@ -52,30 +52,32 @@ nav ul li a:hover {
     flex: 1;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;  /* ← ВАЖНО: центрирование всех элементов */
+    height: 100%;         /* ← чтобы центрировать по высоте */
 }
 
-.nav-left {
+.nav-left,
+.nav-center,
+.nav-right {
     width: 33%;
+    height: 100%;         /* выравнивание */
+    display: flex;
+    align-items: center;   /* ← ключ к вертикальному выравниванию */
 }
 
 .nav-center {
-    width: 33%;
-    display: flex;
     justify-content: center;
 }
 
 .nav-right {
-    width: 33%;
-    display: flex;
     justify-content: flex-end;
 }
 
 .nav-center ul,
 .nav-right ul {
+    list-style: none;
     display: flex;
     gap: 20px;
-    list-style: none;
 }
 
 .nav-center ul li a,
@@ -83,6 +85,11 @@ nav ul li a:hover {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    display: flex;            /* ← гарантирует ровное размещение иконок и текста */
+    align-items: center;      /* ← центрирование текста + иконок */
+    height: 70px;             /* высота = высоте header */
+    line-height: 70px;        /* для надёжного центрирования */
+    white-space: nowrap;      /* ← чтобы меню НЕ переносилось в две строки */
 }
 
 
