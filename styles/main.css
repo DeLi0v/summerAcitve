@@ -29,17 +29,15 @@ header {
 }
 
 .nav-wrapper {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
+  height: 70px;
   width: 100%;
 }
 
-/* Фикс выравнивания — теперь центр реально центр */
 .nav-left,
-.nav-center,
-.nav-right {
-  flex: 1;                 /* ← даёт равные зоны */
+.nav-center {
   display: flex;
   align-items: center;
 }
@@ -49,7 +47,7 @@ header {
 }
 
 .nav-center {
-  justify-content: center; /* ← кнопки станут строго по центру */
+  justify-content: center;
 }
 
 .nav-right {
